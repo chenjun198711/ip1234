@@ -1,6 +1,8 @@
-# WhatIP · Network Intelligence
+# IP1234 · Network Intelligence
 
 一个无需后端、打开即用的公网 IP 与网络环境查询工具。
+
+站点地址: https://ip1234.cc
 
 ## 功能
 
