@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 基础 SEO -->
+  <title>IP1234 — IP 地址查询 · WebRTC 泄露检测 · DNS 泄露检测 · 网站延迟测试</title>
+  <meta name="description" content="IP1234 是免费网络工具站，提供多源 IP 查询、公网 IP 归属地、网站分流路由、WebRTC 泄露检测、DNS 泄露检测、网站延迟测试与设备环境识别。支持 IPv4 / IPv6，数据仅在浏览器本地处理。">
+  <meta name="keywords" content="IP 查询, 公网 IP, IP 地址, IP 归属地, WebRTC 泄露, DNS 泄露, 网站延迟测试, 网站分流, 网络出口, IPv4, IPv6, ASN, 运营商查询, IP 地理位置查询, 在线 IP 工具, 浏览器指纹">
+  <meta name="author" content="IP1234">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="bingbot" content="index, follow">
+  <meta name="theme-color" content="#07110f">
+  <meta name="application-name" content="IP1234">
+  <meta name="apple-mobile-web-app-title" content="IP1234">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- canonical -->
+  <link rel="canonical" href="https://ip1234.cc/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IP1234">
+  <meta property="og:title" content="IP1234 — 看见你的网络真实出口">
+  <meta property="og:description" content="免费网络工具站：多源 IP 查询 · 网站分流路由 · WebRTC 泄露检测 · DNS 泄露检测 · 网站延迟测试。支持 IPv4 / IPv6。">
+  <meta property="og:url" content="https://ip1234.cc/">
+  <meta property="og:image" content="https://ip1234.cc/og.jpg">
+  <meta property="og:image:alt" content="IP1234 — 网络出口情报面板">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IP1234 — 看见你的网络真实出口">
+  <meta name="twitter:description" content="免费网络工具站：多源 IP 查询 · 网站分流路由 · WebRTC 泄露检测 · DNS 泄露检测 · 网站延迟测试。">
+  <meta name="twitter:image" content="https://ip1234.cc/og.jpg">
+  <meta name="twitter:image:alt" content="IP1234 — 网络出口情报面板">
+
+  <!-- 图标与 PWA -->
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <!-- 预连接优化 -->
+  <link rel="preconnect" href="https://ipapi.co" crossorigin>
+  <link rel="preconnect" href="https://api.ip.sb" crossorigin>
+  <link rel="dns-prefetch" href="https://ipapi.co">
+  <link rel="dns-prefetch" href="https://api.ip.sb">
+
+  <!-- 样式 -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- 结构化数据 JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "IP1234",
+    "alternateName": "IP1234 — 看见你的网络真实出口",
+    "url": "https://ip1234.cc/",
+    "description": "免费网络工具站，提供多源 IP 查询、网站分流路由、WebRTC 泄露检测、DNS 泄露检测、网站延迟测试与设备环境识别。支持 IPv4 / IPv6。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript. Requires WebRTC.",
+    "inLanguage": "zh-CN",
+    "image": "https://ip1234.cc/og.jpg",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "多源 IP 查询",
+      "公网 IP 归属地与运营商识别",
+      "网站分流路由检测",
+      "WebRTC 泄露检测",
+      "DNS 泄露检测",
+      "网站延迟测试",
+      "网络画像分析",
+      "设备环境识别"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "IP1234",
+      "url": "https://ip1234.cc/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "IP1234",
+    "url": "https://ip1234.cc/",
+    "inLanguage": "zh-CN",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://ip1234.cc/?ip={ip_search_term}"
+      },
+      "query-input": "required name=ip_search_term"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="site-shell">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="IP1234 首页">
+        <span class="brand-mark">I</span>
+        <span><strong>IP1234</strong><small>NETWORK INTELLIGENCE</small></span>
+      </a>
+      <nav aria-label="主要导航">
+        <a href="#ipviewTools">IP 工具</a>
+        <a href="#overview">IP 概览</a>
+        <a href="#network">网络画像</a>
+        <a href="#device">设备环境</a>
+        <a href="#" id="aboutLink">关于</a>
+      </nav>
+      <div class="top-actions">
+        <span class="live-pill"><i></i> 服务在线</span>
+        <button class="icon-button" id="themeToggle" aria-label="切换明暗主题" title="切换主题">☼</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="ipview-section" id="ipviewTools" aria-labelledby="ipviewTitle">
+        <div class="ipview-header">
+          <div class="section-label">
+            <span>00</span>
+            <div>
+              <h2 id="ipviewTitle">网络出口检测</h2>
+              <p>多源 IP 查询 · 网站分流路由 · WebRTC 泄露检测 · DNS 泄露检测</p>
+            </div>
+          </div>
+          <div class="ipview-toggles">
+            <label class="ipview-toggle">
+              <input type="checkbox" id="hideAllIp">
+              <span class="toggle-track"></span>
+              <span class="toggle-label">隐藏所有 IP</span>
+            </label>
+            <label class="ipview-toggle">
+              <input type="checkbox" id="hideCnIsp">
+              <span class="toggle-track"></span>
+              <span class="toggle-label">隐藏国内信息</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="ipview-tabs" role="tablist">
+          <button class="ipview-tab active" role="tab" data-tab="ipquery">IP 查询</button>
+          <button class="ipview-tab" role="tab" data-tab="routing">网站分流</button>
+          <button class="ipview-tab" role="tab" data-tab="webrtc">WebRTC 泄露</button>
+          <button class="ipview-tab" role="tab" data-tab="latency">网站延迟测试</button>
+          <button class="ipview-tab" role="tab" data-tab="dnsleak">DNS 泄露查询</button>
+        </div>
+
+        <div class="ipview-body">
+          <div class="ipview-panel active" id="panel-ipquery" role="tabpanel">
+            <div class="ipview-list" id="ipQueryList"></div>
+          </div>
+          <div class="ipview-panel" id="panel-routing" role="tabpanel" hidden>
+            <div class="ipview-list" id="routingList"></div>
+          </div>
+          <div class="ipview-panel" id="panel-webrtc" role="tabpanel" hidden>
+            <p class="ipview-desc">通过 WebRTC 获取浏览器本地 IP，与 Cloudflare 检测到的出口 IP 对比，判断是否存在泄露。</p>
+            <div class="ipview-list" id="webrtcList"></div>
+          </div>
+          <div class="ipview-panel" id="panel-latency" role="tabpanel" hidden>
+            <div class="latency-header">
+              <p class="ipview-desc" style="margin:0">对常用网站进行多次延迟采样，取平均值反映连通质量。</p>
+              <button class="latency-testall" id="latencyTestAll">↻ 测全部</button>
+            </div>
+            <div class="ipview-list" id="latencyList"></div>
+          </div>
+          <div class="ipview-panel" id="panel-dnsleak" role="tabpanel" hidden>
+            <div class="latency-header">
+              <p class="ipview-desc" style="margin:0">检测 DNS 解析路径是否与网络出口一致，判断是否存在 DNS 泄露。</p>
+              <button class="latency-testall" id="dnsLeakStart">↻ 开始测试</button>
+            </div>
+            <div class="ipview-list" id="dnsLeakList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero" id="overview">
+        <div class="hero-copy">
+          <div class="eyebrow"><span>LIVE NETWORK SNAPSHOT</span><span>实时网络快照</span></div>
+          <h1>看见你的网络<br><em>真实出口。</em></h1>
+          <p>快速识别公网 IP、地理归属、运营商与设备环境。数据只在你的浏览器中处理，不建立账户，也不上传查询历史。</p>
+        </div>
+        <div class="ip-spotlight">
+          <div class="spotlight-head">
+            <span><i class="status-dot"></i> 当前公网 IP</span>
+            <button id="refreshCurrent">↻ 刷新</button>
+          </div>
+          <div class="ip-skeleton" id="currentSkeleton"><span></span><span></span><span></span></div>
+          <div id="currentContent" hidden>
+            <button class="hero-ip" id="currentIp" title="点击复制 IP">暂未获取<span>复制</span></button>
+            <div class="spotlight-meta">
+              <span id="currentLocation">◎ 未知地区</span>
+              <span id="currentOrg">未知运营商</span>
+              <span id="currentVersion">IPv4 / IPv6</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="search-section" aria-labelledby="searchTitle">
+        <div class="section-label"><span>01</span><div><h2 id="searchTitle">查询任意 IP</h2><p>支持标准 IPv4 与 IPv6 地址</p></div></div>
+        <form class="search-box" id="searchForm">
+          <span class="search-symbol">⌖</span>
+          <label class="sr-only" for="ipSearch">输入 IP 地址</label>
+          <input id="ipSearch" placeholder="例如 8.8.8.8 或 2001:4860:4860::8888" autocomplete="off" spellcheck="false">
+          <button type="button" class="clear-input" id="clearSearch" hidden>×</button>
+          <button class="search-button" id="searchButton" type="submit">开始查询 <span>↗</span></button>
+        </form>
+        <div class="search-helper" id="searchHelper">
+          <span>快捷示例：</span>
+          <button data-example="8.8.8.8">8.8.8.8</button>
+          <button data-example="1.1.1.1">1.1.1.1</button>
+          <button data-example="2001:4860:4860::8888">2001:4860:4860::8888</button>
+        </div>
+      </section>
+
+      <section class="dashboard" id="network">
+        <article class="panel identity-panel">
+          <div class="panel-head">
+            <div><span class="panel-kicker">IDENTITY</span><h2 id="resultTitle">当前网络身份</h2></div>
+            <div class="panel-actions">
+              <button id="favoriteButton" title="收藏此 IP">☆</button>
+              <button id="exportButton" title="导出 JSON">↓</button>
+              <button id="copyButton" title="复制 IP">⧉</button>
+            </div>
+          </div>
+          <div id="identityEmpty" class="empty-panel"><span>⌁</span><p>等待网络数据返回…</p></div>
+          <div id="identityContent" hidden>
+            <div class="identity-row">
+              <div class="flag-tile" id="resultFlag">◎</div>
+              <div><strong class="result-ip" id="resultIp">—</strong><p id="resultNetwork">IPv4 · 网段信息暂不可用</p></div>
+            </div>
+            <div class="data-grid">
+              <div class="data-point"><span>国家 / 地区</span><strong id="countryValue">未知</strong><small id="countrySub"></small></div>
+              <div class="data-point"><span>城市</span><strong id="cityValue">未知</strong><small id="citySub"></small></div>
+              <div class="data-point wide"><span>运营商 / 组织</span><strong id="orgValue">未知</strong><small id="orgSub"></small></div>
+              <div class="data-point"><span>时区</span><strong id="timezoneValue">未知</strong><small id="timezoneSub"></small></div>
+              <div class="data-point"><span>邮政编码</span><strong id="postalValue">未知</strong></div>
+              <div class="data-point"><span>坐标（近似）</span><strong id="coordValue">未知</strong></div>
+              <div class="data-point"><span>国家代码</span><strong id="callingValue">未知</strong><small id="currencySub"></small></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel score-panel">
+          <div class="panel-head"><div><span class="panel-kicker">NETWORK PROFILE</span><h2>网络画像</h2></div><span class="tone-dot warning" id="toneDot"></span></div>
+          <div class="score-ring" id="scoreRing" style="--score: 162deg"><div><strong id="scoreValue">45</strong><span>/ 100</span></div></div>
+          <div class="network-badge warning" id="networkBadge">企业 / 未分类网络</div>
+          <p class="score-note" id="scoreNote">需要结合专业风控数据库进一步确认</p>
+          <div class="signal-list">
+            <div><span>ASN 信息</span><strong class="muted" id="asnSignal">不可用</strong></div>
+            <div><span>运营商可识别</span><strong class="muted" id="orgSignal">不可用</strong></div>
+            <div><span>地理信息完整</span><strong class="muted" id="geoSignal">不可用</strong></div>
+          </div>
+          <p class="disclaimer">画像为启发式判断，不等同于专业欺诈评分。</p>
+        </article>
+
+        <article class="panel map-panel">
+          <div class="panel-head"><div><span class="panel-kicker">APPROXIMATE LOCATION</span><h2>地理位置</h2></div><span class="coord" id="mapCoord">-- / --</span></div>
+          <div id="mapEmpty" class="empty-panel"><span>⌁</span><p>暂无可用坐标</p></div>
+          <div class="map-frame" id="mapFrame" hidden>
+            <iframe id="map" title="IP 的近似位置" loading="lazy" referrerpolicy="no-referrer"></iframe>
+            <span class="map-label" id="mapLabel">未知城市 · 仅供参考</span>
+          </div>
+        </article>
+
+        <article class="panel tools-panel">
+          <div class="panel-head"><div><span class="panel-kicker">DEEP CHECK</span><h2>深度检测工具</h2></div></div>
+          <p>需要更专业的信誉、匿名度或路由数据？可将当前 IP 交给这些第三方工具继续分析。</p>
+          <div class="tool-list">
+            <a id="scamalyticsLink" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true"><span class="tool-icon">↗</span><span><strong>Scamalytics</strong><small>欺诈风险评分</small></span><em>RISK</em></a>
+            <a id="whoerLink" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true"><span class="tool-icon">↗</span><span><strong>Whoer</strong><small>匿名度与代理检测</small></span><em>PRIVACY</em></a>
+            <a id="bgpLink" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true"><span class="tool-icon">↗</span><span><strong>BGP Toolkit</strong><small>ASN 与路由前缀</small></span><em>ROUTE</em></a>
+          </div>
+        </article>
+      </section>
+
+      <section class="lower-grid" id="device">
+        <article class="panel device-panel">
+          <div class="panel-head"><div><span class="panel-kicker">LOCAL ENVIRONMENT</span><h2>设备与浏览器</h2></div><span class="local-chip">仅本地读取</span></div>
+          <div class="device-grid" id="deviceGrid"></div>
+          <div class="privacy-row" id="privacyRow"></div>
+        </article>
+        <article class="panel history-panel">
+          <div class="panel-head"><div><span class="panel-kicker">LOCAL HISTORY</span><h2>最近查询</h2></div><button class="text-button" id="clearHistory" hidden>清空</button></div>
+          <div class="history-list" id="historyList"></div>
+          <div class="empty-panel" id="historyEmpty"><span>⌁</span><p>查询记录会保存在这台设备中</p></div>
+        </article>
+      </section>
+
+      <details class="raw-panel" id="rawPanel" hidden>
+        <summary>查看原始数据 <span>JSON</span></summary>
+        <div class="raw-head"><p>来自 ipapi.co 的原始响应</p><button id="copyRaw">复制全部</button></div>
+        <pre id="rawData"></pre>
+      </details>
+    </main>
+
+    <footer>
+      <div class="brand footer-brand"><span class="brand-mark">I</span><span><strong>IP1234</strong><small>Know your network edge.</small></span></div>
+      <p>IP 地理位置为数据库估算，无法定位到具体门牌或个人。</p>
+      <p class="footer-contact">商务合作 / 广告投放：<a href="mailto:jasson2026@gmail.com">jasson2026@gmail.com</a></p>
+      <nav class="footer-nav" aria-label="页脚导航">
+        <a href="#ipviewTools">IP 工具</a>
+        <a href="#overview">IP 概览</a>
+        <a href="#network">网络画像</a>
+        <a href="#device">设备环境</a>
+        <a href="#" id="aboutLinkFooter">关于</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 IP1234 (ip1234.cc) — 免费 IP 查询与网络工具站</p>
+    </footer>
+
+    <!-- SEO 降级内容：JS 不可用时仍向搜索引擎和用户展示核心信息 -->
+    <noscript>
+      <div style="padding:2rem;text-align:center;">
+        <h2>IP1234 — 免费 IP 查询与网络工具站</h2>
+        <p>IP1234 (ip1234.cc) 提供：多源 IP 查询、公网 IP 归属地与运营商识别、网站分流路由检测、WebRTC 泄露检测、DNS 泄露检测、网站延迟测试、网络画像分析与设备环境识别。支持 IPv4 / IPv6。请启用 JavaScript 以使用全部功能。</p>
+      </div>
+    </noscript>
+    <div class="toast" id="toast" role="status" aria-live="polite"><span>✓</span><b id="toastText"></b></div>
+
+    <div class="about-overlay" id="aboutOverlay" hidden>
+      <div class="about-modal" role="dialog" aria-labelledby="aboutTitle" aria-modal="true">
+        <button class="about-close" id="aboutClose" aria-label="关闭">&times;</button>
+        <h2 id="aboutTitle">关于 ip1234.cc</h2>
+        <div class="about-body">
+          <p>ip1234.cc 是一个免费的网络工具站，提供多源 IP 地址查询、网站分流路由、WebRTC 泄露检测、网络画像、设备环境等信息。</p>
+          <p>页面尽量保持简单直接，方便用户快速完成网络信息查询、连通性排查和日常辅助检测。</p>
+          <h3>赞助与广告说明</h3>
+          <p>本站可以接受广告投放与赞助合作，用于支持域名、服务器、带宽和日常维护成本。</p>
+          <p>如有相关合作需求，可围绕网站工具页面、内容页面或其他合适位置进行沟通与安排。</p>
+          <p>广告或赞助内容会尽量明确标识，不影响页面工具结果与文章内容本身的结论。</p>
+          <p>如需联系广告投放、赞助合作，可通过联系邮箱：<a href="mailto:jasson2026@gmail.com">jasson2026@gmail.com</a>。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+(() => {
+  "use strict";
+  const API_ROOT = "https://ipapi.co";
+  const HISTORY_KEY = "whatip.history.v2";
+  const FAVORITES_KEY = "whatip.favorites.v1";
+  const THEME_KEY = "whatip.theme.v1";
+  const state = { current: null, result: null, history: [], favorites: [], controller: null };
+  const $ = (id) => document.getElementById(id);
+
+  function validIP(value) {
+    const v4 = /^(25[0-5]|2[0-4]\d|1?\d?\d)(\.(25[0-5]|2[0-4]\d|1?\d?\d)){3}$/;
+    const v6 = /^(?:[\da-fA-F]{1,4}:){2,7}[\da-fA-F]{0,4}$|^::1$|^::$/;
+    return v4.test(value) || v6.test(value);
+  }
+
+  function flag(code) {
+    if (!code || code.length !== 2) return "◎";
+    return String.fromCodePoint(...code.toUpperCase().split("").map(char => 127397 + char.charCodeAt(0)));
+  }
+
+  function analyze(data) {
+    const text = `${data?.org || ""} ${data?.asn || ""}`.toLowerCase();
+    const has = words => words.some(word => text.includes(word));
+    if (has(["cloud", "hosting", "vps", "server", "datacenter", "data center", "amazon", "aws", "google", "azure", "digitalocean", "linode", "vultr", "alibaba", "tencent", "huawei", "choopa", "hetzner", "ovh", "leaseweb", "oracle", "m247"]))
+      return { label: "数据中心 / 云服务", tone: "danger", score: 78, note: "可能是代理、服务器或 VPN 出口" };
+    if (has(["mobile", "wireless", "cellular", "vodafone", "t-mobile", "china mobile"]))
+      return { label: "移动网络", tone: "blue", score: 62, note: "运营商级 NAT 和动态地址较常见" };
+    if (has(["telecom", "cable", "dsl", "fiber", "broadband", "comcast", "verizon", "spectrum", "virgin", "unicom", "pccw", "hkt"]))
+      return { label: "住宅宽带", tone: "success", score: 86, note: "从运营商名称判断为终端用户网络" };
+    return { label: "企业 / 未分类网络", tone: "warning", score: 45, note: "需要结合专业风控数据库进一步确认" };
+  }
+
+  function notify(message) {
+    $("toastText").textContent = message;
+    $("toast").classList.add("show");
+    clearTimeout(notify.timer);
+    notify.timer = setTimeout(() => $("toast").classList.remove("show"), 2200);
+  }
+
+  async function copy(text, message = "已复制到剪贴板") {
+    if (!text) return;
+    try { await navigator.clipboard.writeText(text); notify(message); }
+    catch { notify("复制失败，请手动复制"); }
+  }
+
+  function setText(id, value, fallback = "未知") { $(id).textContent = value || fallback; }
+  function setSignal(id, ok) { const el = $(id); el.textContent = ok ? "已确认" : "不可用"; el.className = ok ? "good" : "muted"; }
+
+  function renderCurrent(data) {
+    $("currentSkeleton").hidden = true;
+    $("currentContent").hidden = false;
+    setText("currentIp", data.ip, "暂未获取");
+    $("currentIp").append(Object.assign(document.createElement("span"), { textContent: "复制" }));
+    setText("currentLocation", `${flag(data.country_code)} ${data.country_name || "未知地区"}`);
+    setText("currentOrg", data.org, "未知运营商");
+    setText("currentVersion", data.version || (data.ip.includes(":") ? "IPv6" : "IPv4"));
+  }
+
+  function renderActive(data) {
+    if (!data) return;
+    const profile = analyze(data);
+    $("identityEmpty").hidden = true;
+    $("identityContent").hidden = false;
+    $("rawPanel").hidden = false;
+    setText("resultTitle", state.result ? "查询结果" : "当前网络身份");
+    setText("resultFlag", flag(data.country_code));
+    setText("resultIp", data.ip);
+    setText("resultNetwork", `${data.version || (data.ip.includes(":") ? "IPv6" : "IPv4")} · ${data.network || "网段信息暂不可用"}`);
+    setText("countryValue", data.country_name); setText("countrySub", data.country_code, "");
+    setText("cityValue", data.city); setText("citySub", data.region, "");
+    setText("orgValue", data.org); setText("orgSub", data.asn, "");
+    setText("timezoneValue", data.timezone); setText("timezoneSub", data.utc_offset, "");
+    setText("postalValue", data.postal);
+    setText("coordValue", data.latitude && data.longitude ? `${Number(data.latitude).toFixed(4)}, ${Number(data.longitude).toFixed(4)}` : "未知");
+    setText("callingValue", data.country_calling_code); setText("currencySub", data.currency, "");
+    $("favoriteButton").textContent = state.favorites.includes(data.ip) ? "★" : "☆";
+    $("scoreValue").textContent = profile.score;
+    $("scoreRing").style.setProperty("--score", `${profile.score * 3.6}deg`);
+    $("networkBadge").textContent = profile.label; $("networkBadge").className = `network-badge ${profile.tone}`;
+    $("toneDot").className = `tone-dot ${profile.tone}`;
+    $("scoreNote").textContent = profile.note;
+    setSignal("asnSignal", Boolean(data.asn)); setSignal("orgSignal", Boolean(data.org)); setSignal("geoSignal", Boolean(data.city && data.country_name));
+    $("rawData").textContent = JSON.stringify(data, null, 2);
+    updateMap(data); updateTools(data.ip);
+  }
+
+  function updateMap(data) {
+    if (!data.latitude || !data.longitude) { $("mapEmpty").hidden = false; $("mapFrame").hidden = true; return; }
+    const lat = Number(data.latitude), lon = Number(data.longitude);
+    $("mapEmpty").hidden = true; $("mapFrame").hidden = false;
+    $("mapCoord").textContent = `${lat.toFixed(2)} / ${lon.toFixed(2)}`;
+    $("mapLabel").textContent = `${data.city || "未知城市"} · 仅供参考`;
+    $("map").src = `https://www.openstreetmap.org/export/embed.html?bbox=${lon-.12}%2C${lat-.07}%2C${lon+.12}%2C${lat+.07}&layer=mapnik&marker=${lat}%2C${lon}`;
+  }
+
+  function updateTools(ip) {
+    const links = [["scamalyticsLink", `https://scamalytics.com/ip/${encodeURIComponent(ip)}`], ["whoerLink", `https://whoer.net/check?host=${encodeURIComponent(ip)}`], ["bgpLink", `https://bgp.he.net/ip/${encodeURIComponent(ip)}`]];
+    links.forEach(([id, href]) => { $(id).href = href; $(id).removeAttribute("aria-disabled"); });
+  }
+
+  async function fetchIP(ip, manual = false) {
+    if (manual) {
+      state.controller?.abort(); state.controller = new AbortController();
+      $("searchButton").disabled = true; $("searchButton").innerHTML = '<span class="spinner"></span> 查询中';
+      showHelper("");
+    } else { $("currentSkeleton").hidden = false; $("currentContent").hidden = true; }
+    try {
+      const url = ip ? `${API_ROOT}/${encodeURIComponent(ip)}/json/` : `${API_ROOT}/json/`;
+      const response = await fetch(url, { signal: manual ? state.controller.signal : undefined });
+      if (!response.ok) throw new Error(response.status === 429 ? "查询过于频繁，请稍后再试" : `查询服务暂时不可用（${response.status}）`);
+      const data = await response.json();
+      if (data.error || !data.ip) throw new Error(data.reason || "没有找到这个 IP 地址");
+      if (manual) {
+        state.result = data; $("ipSearch").value = data.ip; addHistory(data);
+        const next = new URL(location.href); next.searchParams.set("ip", data.ip); history.replaceState({}, "", next);
+      } else { state.current = data; window.__ip1234Current = data; renderCurrent(data); }
+      renderActive(state.result || state.current);
+    } catch (error) {
+      if (error.name === "AbortError") return;
+      showHelper(manual ? error.message : `当前 IP 获取失败：${error.message}`, true);
+    } finally {
+      if (manual) { $("searchButton").disabled = false; $("searchButton").innerHTML = '开始查询 <span>↗</span>'; }
+    }
+  }
+
+  function showHelper(message, isError = false) {
+    const helper = $("searchHelper");
+    if (!message) {
+      helper.innerHTML = '<span>快捷示例：</span><button data-example="8.8.8.8">8.8.8.8</button><button data-example="1.1.1.1">1.1.1.1</button><button data-example="2001:4860:4860::8888">2001:4860:4860::8888</button>';
+      bindExamples(); return;
+    }
+    helper.innerHTML = "";
+    const span = document.createElement("span"); span.className = isError ? "error-text" : ""; span.textContent = `${isError ? "⚠ " : ""}${message}`; helper.append(span);
+  }
+
+  function addHistory(data) {
+    state.history = [{ ip: data.ip, city: data.city || "未知城市", country: data.country_name || "未知地区", checkedAt: Date.now() }, ...state.history.filter(item => item.ip !== data.ip)].slice(0, 10);
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(state.history)); renderHistory();
+  }
+
+  function ago(time) {
+    const s = Math.max(1, Math.floor((Date.now() - time) / 1000));
+    if (s < 60) return "刚刚"; if (s < 3600) return `${Math.floor(s/60)} 分钟前`; if (s < 86400) return `${Math.floor(s/3600)} 小时前`; return `${Math.floor(s/86400)} 天前`;
+  }
+
+  function renderHistory() {
+    const list = $("historyList"); list.innerHTML = "";
+    $("historyEmpty").hidden = state.history.length > 0; $("clearHistory").hidden = state.history.length === 0;
+    state.history.forEach(item => {
+      const button = document.createElement("button");
+      const icon = document.createElement("span"); icon.className = "history-icon"; icon.textContent = "↗";
+      const content = document.createElement("span"); const strong = document.createElement("strong"); strong.textContent = item.ip; const small = document.createElement("small"); small.textContent = `${item.city} · ${item.country}`; content.append(strong, small);
+      const time = document.createElement("time"); time.textContent = ago(item.checkedAt);
+      button.append(icon, content, time); button.addEventListener("click", () => { $("ipSearch").value = item.ip; fetchIP(item.ip, true); scrollTo({ top: 430, behavior: "smooth" }); }); list.append(button);
+    });
+  }
+
+  function renderDevice() {
+    const ua = navigator.userAgent;
+    let os = /Windows/i.test(ua) ? "Windows" : /Android/i.test(ua) ? "Android" : /iPhone|iPad|iPod/i.test(ua) ? "iOS / iPadOS" : /Macintosh/i.test(ua) ? "macOS" : /Linux/i.test(ua) ? "Linux" : "未知系统";
+    let browser = /Edg\//i.test(ua) ? "Microsoft Edge" : /OPR\//i.test(ua) ? "Opera" : /Firefox\//i.test(ua) ? "Firefox" : /Chrome\//i.test(ua) ? "Chrome" : /Safari\//i.test(ua) ? "Safari" : "未知浏览器";
+    const connection = navigator.connection;
+    const values = [["▣", "操作系统", os], ["◎", "浏览器", browser], ["文", "语言", navigator.language || "未知"], ["◷", "本地时区", Intl.DateTimeFormat().resolvedOptions().timeZone || "未知"], ["▱", "屏幕", `${screen.width} × ${screen.height} · ${devicePixelRatio}x`], ["⌁", "网络类型", connection?.effectiveType ? `${connection.effectiveType.toUpperCase()}${connection.downlink ? ` · ${connection.downlink} Mbps` : ""}` : "浏览器未公开"]];
+    const grid = $("deviceGrid"); grid.innerHTML = "";
+    values.forEach(([icon, label, value]) => { const item = document.createElement("div"); item.className = "device-item"; const i = document.createElement("span"); i.className = "device-icon"; i.textContent = icon; const div = document.createElement("div"); const small = document.createElement("small"); small.textContent = label; const strong = document.createElement("strong"); strong.textContent = value; div.append(small, strong); item.append(i, div); grid.append(item); });
+    const privacy = [["在线", navigator.onLine, false], ["安全上下文", isSecureContext, false], ["Cookie", navigator.cookieEnabled, false], ["请勿追踪", navigator.doNotTrack === "1", true]];
+    const row = $("privacyRow"); row.innerHTML = "";
+    privacy.forEach(([label, ok, neutral]) => { const span = document.createElement("span"); span.className = neutral ? "neutral" : ok ? "ok" : "off"; span.innerHTML = "<i></i>"; span.append(`${label}: ${neutral ? ok ? "已开启" : "未开启" : ok ? "是" : "否"}`); row.append(span); });
+  }
+
+  function bindExamples() { document.querySelectorAll("[data-example]").forEach(button => button.addEventListener("click", () => { const ip = button.dataset.example; $("ipSearch").value = ip; $("clearSearch").hidden = false; fetchIP(ip, true); })); }
+
+  $("searchForm").addEventListener("submit", event => { event.preventDefault(); const ip = $("ipSearch").value.trim(); if (!ip) return showHelper("请输入要查询的 IPv4 或 IPv6 地址", true); if (!validIP(ip)) return showHelper("IP 格式不正确，请检查后再试", true); fetchIP(ip, true); });
+  $("ipSearch").addEventListener("input", event => { $("clearSearch").hidden = !event.target.value; showHelper(""); });
+  $("clearSearch").addEventListener("click", () => { $("ipSearch").value = ""; $("clearSearch").hidden = true; showHelper(""); $("ipSearch").focus(); });
+  $("refreshCurrent").addEventListener("click", () => fetchIP());
+  $("currentIp").addEventListener("click", () => copy(state.current?.ip));
+  $("copyButton").addEventListener("click", () => copy((state.result || state.current)?.ip));
+  $("copyRaw").addEventListener("click", () => copy(JSON.stringify(state.result || state.current, null, 2), "原始数据已复制"));
+  $("favoriteButton").addEventListener("click", () => { const ip = (state.result || state.current)?.ip; if (!ip) return; const exists = state.favorites.includes(ip); state.favorites = exists ? state.favorites.filter(item => item !== ip) : [ip, ...state.favorites].slice(0, 12); localStorage.setItem(FAVORITES_KEY, JSON.stringify(state.favorites)); $("favoriteButton").textContent = exists ? "☆" : "★"; notify(exists ? "已取消收藏" : "已加入收藏"); });
+  $("exportButton").addEventListener("click", () => { const data = state.result || state.current; if (!data) return; const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" })); const a = document.createElement("a"); a.href = url; a.download = `whatip-${data.ip.replaceAll(":", "-")}.json`; a.click(); URL.revokeObjectURL(url); notify("JSON 报告已导出"); });
+  $("clearHistory").addEventListener("click", () => { state.history = []; localStorage.removeItem(HISTORY_KEY); renderHistory(); });
+  $("themeToggle").addEventListener("click", () => { const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = next; localStorage.setItem(THEME_KEY, next); $("themeToggle").textContent = next === "dark" ? "☼" : "◐"; });
+
+  /* 关于弹窗 */
+  const aboutOverlay = $("aboutOverlay");
+  $("aboutLink").addEventListener("click", (e) => { e.preventDefault(); aboutOverlay.hidden = false; });
+  const aboutFooter = $("aboutLinkFooter");
+  if (aboutFooter) aboutFooter.addEventListener("click", (e) => { e.preventDefault(); aboutOverlay.hidden = false; });
+  $("aboutClose").addEventListener("click", () => { aboutOverlay.hidden = true; });
+  aboutOverlay.addEventListener("click", (e) => { if (e.target === aboutOverlay) aboutOverlay.hidden = true; });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !aboutOverlay.hidden) aboutOverlay.hidden = true; });
+
+  try { state.history = JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]"); state.favorites = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]"); } catch { state.history = []; state.favorites = []; }
+  const theme = localStorage.getItem(THEME_KEY) === "dark" ? "dark" : "light"; document.documentElement.dataset.theme = theme; $("themeToggle").textContent = theme === "dark" ? "☼" : "◐";
+  renderDevice(); renderHistory(); bindExamples(); fetchIP();
+  const preset = new URLSearchParams(location.search).get("ip"); if (preset && validIP(preset)) { $("ipSearch").value = preset; $("clearSearch").hidden = false; fetchIP(preset, true); }
+})();
+</script>
+
+<script>
+/* ===== IP-View 整合功能：IP 查询 / 网站分流 / WebRTC 泄露 ===== */
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const create = (tag, cls) => { const el = document.createElement(tag); if (cls) el.className = cls; return el; };
+
+  /* ---------- 隐私状态 ---------- */
+  const privacy = { hideAllIp: false, hideCnIsp: false };
+
+  function shouldBlurIp(isCN) { return privacy.hideAllIp || (privacy.hideCnIsp && isCN); }
+  function shouldBlurInfo(isCN) { return privacy.hideCnIsp && isCN; }
+
+  $("hideAllIp").addEventListener("change", (e) => { privacy.hideAllIp = e.target.checked; rerenderAll(); });
+  $("hideCnIsp").addEventListener("change", (e) => { privacy.hideCnIsp = e.target.checked; rerenderAll(); });
+
+  /* ---------- Tab 切换 ---------- */
+  document.querySelectorAll(".ipview-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".ipview-tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      const target = tab.dataset.tab;
+      document.querySelectorAll(".ipview-panel").forEach(p => {
+        p.classList.toggle("active", p.id === `panel-${target}`);
+        p.hidden = p.id !== `panel-${target}`;
+      });
+    });
+  });
+
+  /* ---------- 工具函数 ---------- */
+  async function fetchWithTimeout(url, options = {}, ms = 8000) {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), ms);
+    try {
+      const response = await fetch(url, { ...options, signal: controller.signal });
+      if (!response.ok) throw new Error(`请求失败: ${response.status}`);
+      return response;
+    } finally { clearTimeout(id); }
+  }
+
+  function getCountryCodeFromChinese(location) {
+    if (!location) return "";
+    const map = [["香港","HK"],["澳门","MO"],["台湾","TW"],["美国","US"],["日本","JP"],["韩国","KR"],["新加坡","SG"],["英国","GB"],["德国","DE"],["法国","FR"],["俄罗斯","RU"],["加拿大","CA"],["澳大利亚","AU"],["澳洲","AU"],["荷兰","NL"],["印度尼西亚","ID"],["印尼","ID"],["菲律宾","PH"],["马来西亚","MY"],["泰国","TH"],["越南","VN"]];
+    for (const [kw, code] of map) if (location.includes(kw)) return code;
+    if (/中国|北京|上海|天津|重庆|河北|山西|辽宁|吉林|黑龙江|江苏|浙江|安徽|福建|江西|山东|河南|湖北|湖南|广东|海南|四川|贵州|云南|陕西|甘肃|青海|内蒙古|广西|西藏|宁夏|新疆/.test(location)) return "CN";
+    return "";
+  }
+
+  function validCountryCode(code) { return code && /^[a-zA-Z]{2}$/.test(code) ? code.toLowerCase() : null; }
+
+  function flagImg(code) {
+    if (!validCountryCode(code)) return null;
+    const img = create("img", "flag-img");
+    img.src = `https://flagcdn.com/w20/${code.toLowerCase()}.png`;
+    img.alt = "";
+    return img;
+  }
+
+  function isPrivateIPv4(ip) {
+    const p = ip.split(".").map(Number);
+    if (p.length !== 4) return false;
+    if (p[0] === 10 || p[0] === 127) return true;
+    if (p[0] === 172 && p[1] >= 16 && p[1] <= 31) return true;
+    if (p[0] === 192 && p[1] === 168) return true;
+    if (p[0] === 169 && p[1] === 254) return true;
+    return false;
+  }
+
+  function isIPv4(ip) { return /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(ip); }
+  function isIPv6(ip) { return ip && ip.includes(":"); }
+  function sameFamily(a, b) { return (isIPv4(a) && isIPv4(b)) || (isIPv6(a) && isIPv6(b)); }
+
+  /* ---------- 行渲染辅助 ---------- */
+  function makeRow(label) {
+    const row = create("div", "ipview-row");
+    const lab = create("div", "ipview-row-label");
+    lab.textContent = label;
+    lab.title = label;
+    row.append(lab);
+    return row;
+  }
+
+  function makeSkeleton(row) {
+    const sk = create("div", "ipview-skeleton");
+    sk.append(create("span"), create("span"));
+    row.append(sk);
+  }
+
+  function makeRefresh(row, loading, onClick) {
+    const btn = create("button", "ipview-refresh");
+    btn.innerHTML = "&#x21bb;";
+    btn.title = "刷新";
+    if (loading) btn.classList.add("spinning");
+    btn.addEventListener("click", onClick);
+    row.append(btn);
+    return btn;
+  }
+
+  function applyBlur(el, blur) { el.classList.toggle("ipview-blur", blur); }
+
+  /* ========== IP 查询 ========== */
+  const IP_SOURCES = [
+    { key: "officialV4", title: "Cloudflare", fetch: fetchOfficialIPv4 },
+    { key: "ipinfo", title: "IPinfo", fetch: fetchIpinfo },
+    { key: "ipsb", title: "IP.SB", fetch: fetchIpSb },
+    { key: "ip138", title: "IP138", fetch: fetchIp138 },
+    { key: "ipcn", title: "IP.CN", fetch: fetchIpcn },
+  ];
+  const ipQueryState = {};
+
+  async function fetchOfficialIPv4() {
+    const res = await fetchWithTimeout("https://ip-api-v4.aneysha.net/");
+    const data = await res.json();
+    const ipData = data.IP || {};
+    const details = [
+      { label: "国家/地区", value: ipData.Country || "-" },
+      { label: "省份/州", value: ipData.Region || "-" },
+      { label: "城市", value: ipData.City || "-" },
+      { label: "ASN", value: ipData.ASN || "-" },
+      { label: "组织/运营商", value: ipData.ASOrganization || "-" },
+    ];
+    return { ip: ipData.IP || "未知", countryCode: ipData.Country || "", details };
+  }
+
+  async function fetchIp138() {
+    const res = await fetchWithTimeout("https://2026.ip138.com/");
+    const text = await res.text();
+    const ipMatch = text.match(/ip=([0-9\.]+)&/);
+    const locMatch = text.match(/来自：(.*?)<\/span>/);
+    if (!ipMatch) throw new Error("无法解析 IP138 数据格式");
+    const loc = locMatch ? locMatch[1].trim() : "未知";
+    return { ip: ipMatch[1], location: loc, countryCode: getCountryCodeFromChinese(loc) };
+  }
+
+  async function fetchIpcn() {
+    const res = await fetchWithTimeout("https://my.ip.cn/");
+    const text = await res.text();
+    const match = text.match(/ip：(.*?)\s+归属地：(.*)/);
+    if (!match) throw new Error("无法解析 IP.cn 数据格式");
+    const loc = match[2].trim();
+    return { ip: match[1].trim(), location: loc, countryCode: getCountryCodeFromChinese(loc) };
+  }
+
+  async function fetchIpinfo() {
+    const res = await fetchWithTimeout("https://ipinfo.io/json");
+    const data = await res.json();
+    const loc = [data.country, data.region, data.city, data.org].filter(Boolean).join(" ").replace(/\s+/g, " ");
+    return { ip: data.ip || "未知", location: loc || "未知", countryCode: data.country || "" };
+  }
+
+  async function fetchIpSb() {
+    const res = await fetchWithTimeout("https://api.ip.sb/geoip");
+    const data = await res.json();
+    const cc = data.country_code || "";
+    const loc = `${cc} ${data.country || ""} ${data.asn ? "AS" + data.asn : ""} ${data.asn_organization || data.isp || ""}`.trim().replace(/\s+/g, " ");
+    return { ip: data.ip || "未知", location: loc || "未知", countryCode: cc };
+  }
+
+  function getDisplayLocation(data) {
+    if (data?.location) return data.location;
+    if (data?.details) return data.details.filter(i => i.label !== "IP" && i.label !== "ASN").map(i => i.value).filter(v => v && v !== "-").join(" · ");
+    return "";
+  }
+
+  async function loadIpQuery(sourceKey) {
+    const src = IP_SOURCES.find(s => s.key === sourceKey);
+    if (!src) return;
+    ipQueryState[sourceKey] = { loading: true, data: null, error: null };
+    renderIpQueryRow(sourceKey);
+    try {
+      const data = await src.fetch();
+      ipQueryState[sourceKey] = { loading: false, data, error: null };
+    } catch (err) {
+      ipQueryState[sourceKey] = { loading: false, data: null, error: err.message === "Failed to fetch" ? "网络错误或遭跨域拦截" : err.message };
+    }
+    renderIpQueryRow(sourceKey);
+  }
+
+  function renderIpQueryRow(sourceKey) {
+    const src = IP_SOURCES.find(s => s.key === sourceKey);
+    const st = ipQueryState[sourceKey];
+    if (!st) return;
+    const existing = $(`ipq-${sourceKey}`);
+    if (existing) existing.remove();
+    const row = makeRow(src.title);
+    row.id = `ipq-${sourceKey}`;
+
+    if (st.loading) {
+      makeSkeleton(row);
+    } else if (st.error) {
+      const err = create("div", "ipview-row-error");
+      err.textContent = st.error;
+      row.append(err);
+    } else if (st.data) {
+      const cc = validCountryCode(st.data.countryCode);
+      const isCN = cc === "cn";
+      const blurIp = shouldBlurIp(isCN);
+      const blurInfo = shouldBlurInfo(isCN);
+
+      const content = create("div", "ipview-row-content");
+      if (blurInfo) applyBlur(content, true);
+
+      const ipEl = create("div", "ipview-row-ip");
+      ipEl.textContent = st.data.ip;
+      ipEl.title = st.data.ip;
+      if (blurIp) applyBlur(ipEl, true);
+      content.append(ipEl);
+
+      const meta = create("div", "ipview-row-meta");
+      const flag = cc ? flagImg(cc) : null;
+      if (flag) meta.append(flag);
+      const locText = getDisplayLocation(st.data);
+      if (locText) { const t = create("span", "meta-text"); t.textContent = locText; t.title = locText; meta.append(t); }
+      content.append(meta);
+      row.append(content);
+    }
+
+    makeRefresh(row, st.loading, () => loadIpQuery(sourceKey));
+    $("ipQueryList").append(row);
+  }
+
+  function renderIpQueryAll() {
+    $("ipQueryList").innerHTML = "";
+    IP_SOURCES.forEach(s => renderIpQueryRow(s.key));
+  }
+
+  /* ========== 网站分流 ========== */
+  const TARGET_SITES = [
+    { id: "x", name: "X", url: "https://x.com/cdn-cgi/trace" },
+    { id: "chatgpt", name: "ChatGPT", url: "https://chatgpt.com/cdn-cgi/trace" },
+    { id: "openai", name: "OpenAI", url: "https://openai.com/cdn-cgi/trace" },
+    { id: "claude", name: "Claude", url: "https://claude.ai/cdn-cgi/trace" },
+    { id: "anthropic", name: "Anthropic", url: "https://anthropic.com/cdn-cgi/trace" },
+    { id: "grok", name: "Grok", url: "https://grok.com/cdn-cgi/trace" },
+  ];
+  const routingState = {};
+  const ipCache = {};
+
+  async function fetchTrace(url) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("请求失败");
+      const text = await res.text();
+      const ipMatch = text.match(/ip=(.+)/);
+      if (!ipMatch) throw new Error("无法解析 IP");
+      return { ip: ipMatch[1].trim() };
+    } catch (err) {
+      throw new Error(err.message === "Failed to fetch" ? "网络错误或遭跨域拦截" : err.message);
+    }
+  }
+
+  async function fetchGeoByIp(ip) {
+    const res = await fetch(`https://api.ip.sb/geoip/${ip}`);
+    if (!res.ok) throw new Error("GEO 查询失败");
+    return await res.json();
+  }
+
+  async function loadRouting(siteId) {
+    const site = TARGET_SITES.find(s => s.id === siteId);
+    if (!site) return;
+    routingState[siteId] = { loading: true, data: null, error: null };
+    renderRoutingRow(siteId);
+    try {
+      const { ip } = await fetchTrace(site.url);
+      let geo;
+      if (ipCache[ip]) { geo = ipCache[ip]; }
+      else { geo = await fetchGeoByIp(ip); ipCache[ip] = geo; }
+      routingState[siteId] = { loading: false, data: { ip, geo }, error: null };
+    } catch (err) {
+      routingState[siteId] = { loading: false, data: null, error: err.message };
+    }
+    renderRoutingRow(siteId);
+  }
+
+  function renderRoutingRow(siteId) {
+    const site = TARGET_SITES.find(s => s.id === siteId);
+    const st = routingState[siteId];
+    if (!st) return;
+    const existing = $(`rt-${siteId}`);
+    if (existing) existing.remove();
+    const row = makeRow(site.name);
+    row.id = `rt-${siteId}`;
+
+    if (st.loading) {
+      makeSkeleton(row);
+    } else if (st.error) {
+      const err = create("div", "ipview-row-error");
+      err.textContent = st.error;
+      row.append(err);
+    } else if (st.data) {
+      const geo = st.data.geo;
+      const isCN = geo?.country_code?.toUpperCase() === "CN";
+      const blurIp = shouldBlurIp(isCN);
+      const blurInfo = shouldBlurInfo(isCN);
+
+      const content = create("div", "ipview-row-content");
+      if (blurInfo) applyBlur(content, true);
+
+      const ipEl = create("div", "ipview-row-ip");
+      ipEl.textContent = st.data.ip;
+      ipEl.title = st.data.ip;
+      if (blurIp) applyBlur(ipEl, true);
+      content.append(ipEl);
+
+      const meta = create("div", "ipview-row-meta");
+      if (geo?.country_code) { const f = flagImg(geo.country_code); if (f) meta.append(f); }
+      if (geo?.country) { const t = create("span", "meta-text"); t.textContent = geo.country; t.title = geo.country; meta.append(t); }
+      if (geo?.organization) { const o = create("span", "meta-org"); o.textContent = geo.organization; o.title = geo.organization; meta.append(o); }
+      if (geo?.asn) { const a = create("span", "asn-chip"); a.textContent = "AS" + geo.asn; meta.append(a); }
+      content.append(meta);
+      row.append(content);
+    }
+
+    makeRefresh(row, st.loading, () => loadRouting(siteId));
+    $("routingList").append(row);
+  }
+
+  function renderRoutingAll() {
+    $("routingList").innerHTML = "";
+    TARGET_SITES.forEach(s => renderRoutingRow(s.id));
+  }
+
+  /* ========== WebRTC 泄露检测 ========== */
+  const COUNTRY_NAMES = { CN:"中国",HK:"中国香港",MO:"中国澳门",TW:"中国台湾",US:"美国",JP:"日本",KR:"韩国",SG:"新加坡",GB:"英国",DE:"德国",FR:"法国",RU:"俄罗斯",CA:"加拿大",AU:"澳大利亚",NL:"荷兰",ID:"印度尼西亚",PH:"菲律宾",MY:"马来西亚",TH:"泰国",VN:"越南",IN:"印度",BR:"巴西",IT:"意大利",ES:"西班牙" };
+  const STUN_SERVERS = [{ urls: "stun:stun.l.google.com:19302" }, { urls: "stun:stun1.l.google.com:19302" }];
+  let webrtcState = { loading: false, webrtcIPs: [], webrtcError: null, cfIP: null, cfCountryCode: null, cfError: null, webrtcGeo: null, leakStatus: "checking", leakReason: "" };
+
+  function countryName(code) { return COUNTRY_NAMES[code] || code || "未知"; }
+
+  function getWebRTCIPs() {
+    return new Promise((resolve) => {
+      const ips = new Set();
+      let resolved = false;
+      let pc;
+      try { pc = new RTCPeerConnection({ iceServers: STUN_SERVERS }); }
+      catch { resolve([]); return; }
+      const done = () => { if (resolved) return; resolved = true; try { pc.close(); } catch {} resolve([...ips]); };
+      const timeout = setTimeout(done, 5000);
+      pc.onicecandidate = (e) => {
+        if (!e.candidate) { clearTimeout(timeout); done(); return; }
+        const parts = e.candidate.candidate.split(" ");
+        if (parts.length >= 6) {
+          const addr = parts[4];
+          if (!addr.includes(".local") && addr !== "::") {
+            if (isIPv4(addr) || isIPv6(addr)) ips.add(addr);
+          }
+        }
+      };
+      try { pc.createDataChannel(""); pc.createOffer().then(o => pc.setLocalDescription(o)).catch(done); }
+      catch { done(); }
+    });
+  }
+
+  function analyzeLeak(webrtcIPs, cfIP, cfCountryCode, webrtcGeo, cfGeo) {
+    const publicIPv4 = webrtcIPs.filter(ip => isIPv4(ip) && !isPrivateIPv4(ip));
+    const publicIPv6 = webrtcIPs.filter(ip => isIPv6(ip) && !ip.startsWith("fe80:") && !ip.startsWith("fd") && !ip.startsWith("fc"));
+    const hasPublicAny = publicIPv4.length > 0 || publicIPv6.length > 0;
+    const hasOnlyPrivate = webrtcIPs.length > 0 && !hasPublicAny;
+
+    if (webrtcIPs.length === 0) return { leakStatus: "safe", leakReason: "浏览器已阻止 WebRTC 获取 IP，未泄露真实 IP" };
+    if (hasOnlyPrivate) return { leakStatus: "safe", leakReason: "WebRTC 仅获取到内网 IP，未泄露公网 IP" };
+
+    /* 直接匹配公网 IP —— WebRTC 中任何公网 IP 与已知出口 IP 相同则视为安全 */
+    const allPublicIPs = [...publicIPv4, ...publicIPv6];
+    if (cfIP && allPublicIPs.some(ip => ip === cfIP)) {
+      return { leakStatus: "safe", leakReason: "WebRTC 获取的 IP 与公网出口 IP 一致，未发现泄露" };
+    }
+
+    /* 仅有一个公网 IP 且无法与出口对比时，尝试通过 GEO 归属地判断 */
+    const wCode = webrtcGeo?.countryCode;
+    const cCode = cfCountryCode || cfGeo?.countryCode;
+    if (wCode && cCode) {
+      if (wCode !== cCode) {
+        return { leakStatus: "leak", leakReason: `WebRTC IP 归属地(${countryName(wCode)})与公网出口归属地(${countryName(cCode)})不一致，疑似泄露真实 IP` };
+      }
+      return { leakStatus: "safe", leakReason: `WebRTC IP 归属地与公网出口归属地一致(${countryName(wCode)})，未发现明显泄露` };
+    }
+
+    /* 没有对比来源，但 WebRTC 获取到公网 IP —— 提示用户检查 */
+    if (allPublicIPs.length > 0) {
+      return { leakStatus: "uncertain", leakReason: `WebRTC 获取到公网 IP${allPublicIPs.length > 1 ? `(${allPublicIPs.length}个)` : ""}，请人工核实是否与您的出口 IP 一致` };
+    }
+
+    return { leakStatus: "uncertain", leakReason: "无法获取足够信息进行对比，请人工检查" };
+  }
+
+  /* 获取公网出口 IP（多源回退） */
+  async function fetchPublicExitIP() {
+    /* 优先使用已获取的 window.__ip1234Current（来自 ipapi.co，主页面暴露） */
+    const w = window.__ip1234Current;
+    if (w && w.ip && w.ip !== "未知") {
+      return {
+        ip: w.ip,
+        countryCode: w.country || w.country_code || "",
+        geo: {
+          country: w.country_name || w.country || w.country_name || "",
+          countryCode: w.country || w.country_code || ""
+        }
+      };
+    }
+    /* 回退 1：Cloudflare 接口 */
+    try {
+      const data = await fetchOfficialIPv4();
+      if (data && data.ip && data.ip !== "未知") {
+        return { ip: data.ip, countryCode: data.countryCode || "", geo: null };
+      }
+    } catch {}
+    /* 回退 2：从已完成的 IP 查询中提取 */
+    for (const key of ["officialV4", "ipinfo", "ipsb", "ip138", "ipcn"]) {
+      const s = ipQueryState[key];
+      if (s && !s.loading && !s.error && s.data && s.data.ip && s.data.ip !== "未知") {
+        return { ip: s.data.ip, countryCode: s.data.countryCode || "", geo: null };
+      }
+    }
+    throw new Error("无法获取公网出口 IP");
+  }
+
+  async function loadWebRTC() {
+    webrtcState = { ...webrtcState, loading: true, leakStatus: "checking", leakReason: "" };
+    renderWebRTC();
+
+    /* 如果公网出口 IP 还没就绪，等待一下再开始（避免过早获取不到出口 IP） */
+    if (!window.__ip1234Current || !window.__ip1234Current.ip) {
+      /* 轮询等待，最多 3 秒 */
+      const start = Date.now();
+      while ((!window.__ip1234Current || !window.__ip1234Current.ip) && Date.now() - start < 3000) {
+        await new Promise(r => setTimeout(r, 300));
+      }
+    }
+
+    const webrtcResult = await Promise.resolve().then(() => getWebRTCIPs());
+
+    let webrtcIPs = [], webrtcError = null;
+    webrtcIPs = webrtcResult;
+    if (webrtcIPs.length === 0) webrtcError = "浏览器阻止了 WebRTC 或未获取到任何 IP";
+
+    let cfIP = null, cfCountryCode = null, cfError = null, cfGeo = null;
+    try {
+      const exit = await fetchPublicExitIP();
+      cfIP = exit.ip;
+      cfCountryCode = exit.countryCode;
+      cfGeo = exit.geo;
+    } catch (e) {
+      cfError = e.message || "无法获取公网出口 IP";
+    }
+
+    /* 对 WebRTC 公网 IP 查询 GEO 归属地 */
+    let webrtcGeo = null;
+    const publicIPv4 = webrtcIPs.filter(ip => isIPv4(ip) && !isPrivateIPv4(ip));
+    const publicIPv6 = webrtcIPs.filter(ip => isIPv6(ip) && !ip.startsWith("fe80:") && !ip.startsWith("fd") && !ip.startsWith("fc"));
+    const allPublic = [...publicIPv4, ...publicIPv6];
+    /* 优先选与 cfIP 同一家族的 IP 进行 GEO 查询 */
+    let targetIP = null;
+    if (cfIP) targetIP = allPublic.find(ip => sameFamily(ip, cfIP)) || allPublic[0];
+    else targetIP = publicIPv4[0] || allPublic[0];
+
+    if (targetIP) {
+      try {
+        const geo = await fetchGeoByIp(targetIP);
+        webrtcGeo = { country: geo.country || "", countryCode: geo.country_code || "" };
+      } catch {}
+    }
+
+    const analysis = analyzeLeak(webrtcIPs, cfIP, cfCountryCode, webrtcGeo, cfGeo);
+    webrtcState = { loading: false, webrtcIPs, webrtcError, cfIP, cfCountryCode, cfError, webrtcGeo, ...analysis };
+    renderWebRTC();
+  }
+
+  function renderWebRTC() {
+    const list = $("webrtcList");
+    list.innerHTML = "";
+    const s = webrtcState;
+    const blurIp = shouldBlurIp(false);
+    const cfIsCN = s.cfCountryCode?.toUpperCase() === "CN";
+    const blurInfo = shouldBlurInfo(cfIsCN);
+
+    // WebRTC IP row
+    const rowW = makeRow("WebRTC");
+    if (s.loading) { makeSkeleton(rowW); }
+    else if (s.webrtcError) { const e = create("div", "ipview-row-error"); e.textContent = s.webrtcError; rowW.append(e); }
+    else {
+      const content = create("div", "ipview-row-content");
+      if (blurInfo) applyBlur(content, true);
+      const publicIPs = s.webrtcIPs.filter(ip => !isPrivateIPv4(ip));
+      if (publicIPs.length > 0) {
+        publicIPs.forEach((ip) => {
+          const line = create("div", "ipview-row-meta");
+          const ipEl = create("span", "ipview-row-ip");
+          ipEl.style.fontSize = "13px";
+          ipEl.textContent = ip;
+          ipEl.title = ip;
+          if (blurIp) applyBlur(ipEl, true);
+          line.append(ipEl);
+          const chip = create("span", "ver-chip");
+          chip.textContent = ip.includes(":") ? "IPv6" : "IPv4";
+          line.append(chip);
+          content.append(line);
+        });
+      } else {
+        const blank = create("div", "ipview-row-blank");
+        blank.textContent = "未获取到公网 IP";
+        content.append(blank);
+      }
+      if (s.webrtcGeo) {
+        const meta = create("div", "ipview-row-meta");
+        if (s.webrtcGeo.countryCode) { const f = flagImg(s.webrtcGeo.countryCode); if (f) meta.append(f); }
+        const t = create("span", "meta-text");
+        t.textContent = s.webrtcGeo.country || s.webrtcGeo.countryCode || "";
+        meta.append(t);
+        content.append(meta);
+      }
+      rowW.append(content);
+    }
+    makeRefresh(rowW, s.loading, loadWebRTC);
+    list.append(rowW);
+
+    // Cloudflare IP row
+    const rowC = makeRow("Cloudflare");
+    if (s.loading) { makeSkeleton(rowC); }
+    else if (s.cfError) { const e = create("div", "ipview-row-error"); e.textContent = s.cfError; rowC.append(e); }
+    else {
+      const content = create("div", "ipview-row-content");
+      if (blurInfo) applyBlur(content, true);
+      const line = create("div", "ipview-row-meta");
+      const ipEl = create("span", "ipview-row-ip");
+      ipEl.style.fontSize = "13px";
+      ipEl.textContent = s.cfIP || "—";
+      ipEl.title = s.cfIP || "";
+      if (blurIp) applyBlur(ipEl, true);
+      line.append(ipEl);
+      if (s.cfIP) { const chip = create("span", "ver-chip"); chip.textContent = s.cfIP.includes(":") ? "IPv6" : "IPv4"; line.append(chip); }
+      content.append(line);
+      if (s.cfCountryCode) {
+        const meta = create("div", "ipview-row-meta");
+        const f = flagImg(s.cfCountryCode); if (f) meta.append(f);
+        const t = create("span", "meta-text"); t.textContent = s.cfCountryCode; meta.append(t);
+        content.append(meta);
+      }
+      rowC.append(content);
+    }
+    makeRefresh(rowC, s.loading, loadWebRTC);
+    list.append(rowC);
+
+    // Verdict row
+    if (!s.loading) {
+      const verdictMap = { safe: "未泄露", leak: "疑似泄露", uncertain: "无法确认", checking: "检测中...", error: "检测异常" };
+      const rowV = create("div", "ipview-verdict");
+      const lab = create("div", "verdict-label"); lab.textContent = "结论"; rowV.append(lab);
+      const wrap = create("div");
+      wrap.style.cssText = "flex:1;display:flex;align-items:center;gap:8px;min-width:0";
+      const vt = create("span", `verdict-text ${s.leakStatus}`);
+      vt.textContent = verdictMap[s.leakStatus] || "检测中...";
+      wrap.append(vt);
+      const reason = create("span", "verdict-reason");
+      reason.textContent = s.leakReason;
+      reason.title = s.leakReason;
+      wrap.append(reason);
+      rowV.append(wrap);
+      list.append(rowV);
+    }
+  }
+
+  /* ========== 网站延迟测试 ========== */
+  const LATENCY_TARGETS = [
+    { id: "baidu", name: "百度", url: "https://www.baidu.com/favicon.ico" },
+    { id: "bilibili", name: "哔哩哔哩", url: "https://i0.hdslb.com/bfs/face/member/noface.jpg@24w_24h_1c" },
+    { id: "qq", name: "腾讯", url: "https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico" },
+    { id: "google", name: "Google", url: "https://www.google.com/favicon.ico" },
+    { id: "github", name: "GitHub", url: "https://github.com/favicon.ico" },
+    { id: "cloudflare", name: "Cloudflare", url: "https://www.cloudflare.com/favicon.ico" },
+  ];
+  const LATENCY_TIMES = 12;
+  const LATENCY_TIMEOUT = 2500;
+  const latencyState = {};
+  let latencyTestingAll = false;
+  LATENCY_TARGETS.forEach(t => { latencyState[t.id] = { status: "idle", history: Array(LATENCY_TIMES).fill(null), average: 0 }; });
+
+  function getDotClass(res) {
+    if (!res) return "";
+    if (!res.success || res.time >= LATENCY_TIMEOUT) return "fail";
+    if (res.time < 100) return "good";
+    if (res.time < 200) return "ok";
+    if (res.time < 400) return "warn";
+    if (res.time < 800) return "slow";
+    return "fail";
+  }
+
+  function getTimeClass(avg) {
+    if (avg === 0) return "";
+    if (avg < 100) return "good";
+    if (avg < 200) return "ok";
+    if (avg < 400) return "warn";
+    if (avg < 800) return "slow";
+    return "fail";
+  }
+
+  async function pingSite(url) {
+    const start = performance.now();
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), LATENCY_TIMEOUT);
+      await fetch(`${url}?t=${Date.now()}${Math.random()}`, { method: "HEAD", mode: "no-cors", cache: "no-store", signal: controller.signal });
+      clearTimeout(timeoutId);
+      return { success: true, time: Math.round(performance.now() - start) };
+    } catch {
+      return { success: false, time: LATENCY_TIMEOUT };
+    }
+  }
+
+  async function testLatency(siteId) {
+    const site = LATENCY_TARGETS.find(s => s.id === siteId);
+    if (!site) return;
+    latencyState[siteId] = { status: "running", history: Array(LATENCY_TIMES).fill(null), average: 0 };
+    renderLatencyRow(siteId);
+    await pingSite(site.url);
+    await new Promise(r => setTimeout(r, 50));
+    const validTimes = [];
+    for (let i = 0; i < LATENCY_TIMES; i++) {
+      const res = await pingSite(site.url);
+      latencyState[siteId].history[i] = res;
+      renderLatencyRow(siteId);
+      if (res.success && res.time < LATENCY_TIMEOUT) validTimes.push(res.time);
+      if (i < LATENCY_TIMES - 1) await new Promise(r => setTimeout(r, 50));
+    }
+    if (validTimes.length >= 3) { validTimes.sort((a, b) => a - b); validTimes.pop(); }
+    let avg = 0;
+    if (validTimes.length > 0) avg = Math.round(validTimes.reduce((a, c) => a + c, 0) / validTimes.length);
+    latencyState[siteId] = { status: "done", history: latencyState[siteId].history, average: avg };
+    renderLatencyRow(siteId);
+  }
+
+  async function testLatencyAll() {
+    if (latencyTestingAll) return;
+    latencyTestingAll = true;
+    $("latencyTestAll").classList.add("testing");
+    const limit = 3;
+    for (let i = 0; i < LATENCY_TARGETS.length; i += limit) {
+      const batch = LATENCY_TARGETS.slice(i, i + limit);
+      await Promise.all(batch.map(s => testLatency(s.id)));
+    }
+    latencyTestingAll = false;
+    $("latencyTestAll").classList.remove("testing");
+  }
+
+  function renderLatencyRow(siteId) {
+    const site = LATENCY_TARGETS.find(s => s.id === siteId);
+    const st = latencyState[siteId];
+    if (!st) return;
+    const existing = $(`lt-${siteId}`);
+    if (existing) existing.remove();
+    const row = create("div", "latency-row");
+    row.id = `lt-${siteId}`;
+
+    const lab = create("div", "latency-row-label");
+    const favicon = create("img", "latency-icon");
+    favicon.src = site.url;
+    favicon.alt = "";
+    favicon.onerror = () => { favicon.style.display = "none"; };
+    lab.append(favicon);
+    const nameSpan = create("span");
+    nameSpan.textContent = site.name;
+    nameSpan.title = site.name;
+    lab.append(nameSpan);
+    row.append(lab);
+
+    const dotsWrap = create("div", "latency-dots");
+    for (let i = 0; i < LATENCY_TIMES; i++) {
+      const dot = create("div", `latency-dot ${getDotClass(st.history[i])}`);
+      const res = st.history[i];
+      dot.title = res ? (res.success ? `${res.time}ms` : "超时") : "等待中...";
+      dotsWrap.append(dot);
+    }
+    row.append(dotsWrap);
+
+    const timing = create("div", "latency-timing");
+    const timeEl = create("div", `latency-time ${getTimeClass(st.average)}`);
+    if (st.status === "idle") timeEl.textContent = "-";
+    else if (st.status === "running" && st.average === 0) timeEl.textContent = "...";
+    else if (st.average > 0) timeEl.textContent = st.average + "ms";
+    else timeEl.textContent = "超时";
+    timing.append(timeEl);
+
+    const refresh = create("button", "ipview-refresh");
+    refresh.innerHTML = "&#x21bb;";
+    refresh.title = "重新测试";
+    if (st.status === "running") refresh.classList.add("spinning");
+    refresh.addEventListener("click", () => testLatency(siteId));
+    timing.append(refresh);
+    row.append(timing);
+
+    $("latencyList").append(row);
+  }
+
+  function renderLatencyAll() {
+    $("latencyList").innerHTML = "";
+    LATENCY_TARGETS.forEach(s => renderLatencyRow(s.id));
+  }
+
+  $("latencyTestAll").addEventListener("click", testLatencyAll);
+
+  /* ========== DNS 泄露查询 ========== */
+  const dnsLeakState = { status: "idle", testId: null, dnsServers: [], error: null, userIp: "", userOrg: "" };
+  let dnsLeakStarted = false;
+  const PUBLIC_DNS = ["google", "cloudflare", "opendns", "quad9", "level3", "verisign", "comodo", "dnswatch", "amazon", "mullvad"];
+
+  function isPublicDns(aso) {
+    if (!aso) return false;
+    const lower = aso.toLowerCase();
+    return PUBLIC_DNS.some(p => lower.includes(p));
+  }
+
+  function getUserIpInfo() {
+    for (const key of ["officialV4", "ipinfo", "ipsb", "ip138", "ipcn"]) {
+      const s = ipQueryState[key];
+      if (s && !s.loading && !s.error && s.data && s.data.ip && s.data.ip !== "未知") {
+        let org = "";
+        if (s.data.details) {
+          const orgDetail = s.data.details.find(d => (d.label || "").includes("运营商") || (d.label || "").includes("组织"));
+          if (orgDetail) org = orgDetail.value;
+        }
+        if (!org && s.data.location) org = s.data.location;
+        return { ip: s.data.ip, org, countryCode: s.data.countryCode || "" };
+      }
+    }
+    /* 备选：从主状态获取（ipapi.co 数据） */
+    if (state.current && state.current.ip) {
+      return { ip: state.current.ip, org: state.current.org || "", countryCode: state.current.country || "" };
+    }
+    return { ip: "", org: "", countryCode: "" };
+  }
+
+  async function fetchJsonWithFallback(url, timeout = 10000) {
+    const urls = [
+      url,
+      `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+      `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+    ];
+    for (const u of urls) {
+      try {
+        const res = await fetchWithTimeout(u, {}, timeout);
+        if (res.ok) return await res.json();
+      } catch (e) { /* 尝试下一个 URL */ }
+    }
+    throw new Error("所有请求方式均失败");
+  }
+
+  async function fetchTextWithFallback(url, timeout = 10000) {
+    const urls = [
+      url,
+      `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+    ];
+    for (const u of urls) {
+      try {
+        const res = await fetchWithTimeout(u, {}, timeout);
+        if (res.ok) return await res.text();
+      } catch (e) { /* 尝试下一个 URL */ }
+    }
+    throw new Error("所有请求方式均失败");
+  }
+
+  async function startDnsLeakTest() {
+    dnsLeakState.status = "running";
+    dnsLeakState.dnsServers = [];
+    dnsLeakState.error = null;
+    dnsLeakState.testId = null;
+    const userInfo = getUserIpInfo();
+    dnsLeakState.userIp = userInfo.ip;
+    dnsLeakState.userOrg = userInfo.org;
+    renderDnsLeak();
+
+    let cfTraceIp = "";
+    let cfTraceLoc = "";
+    let cfTraceColo = "";
+
+    /* Step 1: 直接获取 Cloudflare trace（支持 CORS，可靠） */
+    try {
+      const traceRes = await fetchWithTimeout("https://1.1.1.1/cdn-cgi/trace", {}, 8000);
+      const traceText = await traceRes.text();
+      cfTraceIp = (traceText.match(/^ip=(.+)$/m) || [])[1] || "";
+      cfTraceLoc = (traceText.match(/^loc=(.+)$/m) || [])[1] || "";
+      cfTraceColo = (traceText.match(/^colo=(.+)$/m) || [])[1] || "";
+    } catch (e) {
+      /* 直接请求失败，尝试 CORS 代理 */
+      try {
+        const proxyUrl = `https://corsproxy.io/?url=${encodeURIComponent("https://1.1.1.1/cdn-cgi/trace")}`;
+        const traceRes = await fetchWithTimeout(proxyUrl, {}, 8000);
+        const traceText = await traceRes.text();
+        cfTraceIp = (traceText.match(/^ip=(.+)$/m) || [])[1] || "";
+        cfTraceLoc = (traceText.match(/^loc=(.+)$/m) || [])[1] || "";
+        cfTraceColo = (traceText.match(/^colo=(.+)$/m) || [])[1] || "";
+      } catch (e2) { /* Cloudflare trace 不可用 */ }
+    }
+
+    /* Step 2: 尝试 bash.ws 完整 DNS 泄露测试（可选增强） */
+    let bashWsSuccess = false;
+    try {
+      const html = await fetchTextWithFallback("https://bash.ws/dnsleak/test", 8000);
+      const match = html.match(/leak-id[^>]*value="([^"]+)"/);
+      const testId = match ? match[1] : null;
+      if (testId) {
+        dnsLeakState.testId = testId;
+        renderDnsLeak();
+
+        /* 加载图片触发 DNS 查询 */
+        for (let i = 0; i < 10; i++) {
+          const rand = Math.random().toString(36).substring(2, 12);
+          new Image().src = `https://${rand}.bash.ws/dnsleak/test/${testId}`;
+        }
+
+        /* 等待 DNS 查询传播 */
+        await new Promise(r => setTimeout(r, 5000));
+        renderDnsLeak();
+
+        /* 获取结果 */
+        const results = await fetchJsonWithFallback(`https://bash.ws/dnsleak/test/${testId}?json`, 10000);
+        if (Array.isArray(results)) {
+          const dnsResults = results.filter(r => r.ip && r.type !== "conclusion" && r.type !== "dnsleak_test" && r.type !== "ip");
+          if (dnsResults.length > 0) {
+            dnsLeakState.dnsServers = dnsResults;
+            bashWsSuccess = true;
+          }
+        }
+      }
+    } catch (err) {
+      /* bash.ws 测试不可用，使用 Cloudflare trace */
+    }
+
+    /* Step 3: 如果 bash.ws 没有结果，使用 Cloudflare trace */
+    if (!bashWsSuccess && cfTraceIp) {
+      dnsLeakState.dnsServers = [{
+        ip: cfTraceIp,
+        aso: "Cloudflare Trace Endpoint",
+        country: cfTraceLoc,
+        country_code: cfTraceLoc,
+        city: cfTraceColo,
+        isTrace: true
+      }];
+    }
+
+    /* Step 4: 设置最终状态 */
+    if (dnsLeakState.dnsServers.length > 0) {
+      dnsLeakState.status = "done";
+    } else {
+      dnsLeakState.status = "error";
+      dnsLeakState.error = "DNS 泄露测试服务暂不可用，请使用下方链接进行手动检测。";
+    }
+
+    renderDnsLeak();
+  }
+
+  /* 备选方案（保留兼容性） */
+  async function dnsLeakFallback() {
+    const traceRes = await fetchWithTimeout("https://1.1.1.1/cdn-cgi/trace", {}, 8000);
+    const traceText = await traceRes.text();
+    const traceIp = (traceText.match(/^ip=(.+)$/m) || [])[1] || "";
+    const traceLoc = (traceText.match(/^loc=(.+)$/m) || [])[1] || "";
+    const traceColo = (traceText.match(/^colo=(.+)$/m) || [])[1] || "";
+    dnsLeakState.dnsServers = [{
+      ip: traceIp,
+      aso: "Cloudflare Trace Endpoint",
+      country: traceLoc,
+      country_code: traceLoc,
+      city: traceColo,
+      isTrace: true
+    }];
+    dnsLeakState.status = "done";
+  }
+
+  function analyzeDnsLeak() {
+    if (dnsLeakState.dnsServers.length === 0) {
+      return { status: "uncertain", text: "未检测到 DNS 服务器", reason: "可能测试仍在进行或未获取到结果" };
+    }
+    /* 备选方案：Cloudflare trace 结果 */
+    if (dnsLeakState.dnsServers[0] && dnsLeakState.dnsServers[0].isTrace) {
+      const traceIp = dnsLeakState.dnsServers[0].ip;
+      if (traceIp && dnsLeakState.userIp && traceIp === dnsLeakState.userIp) {
+        return { status: "safe", text: "网络出口一致", reason: "Cloudflare 检测到的 IP 与公网 IP 一致，建议使用 dnsleaktest.com 进一步确认" };
+      } else if (traceIp && dnsLeakState.userIp && traceIp !== dnsLeakState.userIp) {
+        return { status: "leak", text: "出口 IP 不一致", reason: "Cloudflare 检测到的 IP 与公网 IP 不同，可能存在代理或 VPN 配置问题" };
+      }
+      return { status: "uncertain", text: "无法完全确认", reason: "已获取 Cloudflare 出口 IP，建议使用 dnsleaktest.com 进行完整 DNS 泄露检测" };
+    }
+    /* 完整测试结果分析 */
+    const userOrgLower = (dnsLeakState.userOrg || "").toLowerCase();
+    const userOrgFirst = userOrgLower.split(" ")[0] || userOrgLower;
+    const hasMatchingIsp = dnsLeakState.dnsServers.some(s => {
+      const asoLower = (s.aso || "").toLowerCase();
+      return userOrgFirst && asoLower.includes(userOrgFirst);
+    });
+    const hasNonMatchingNonPublic = dnsLeakState.dnsServers.some(s => {
+      const asoLower = (s.aso || "").toLowerCase();
+      return !isPublicDns(s.aso) && !(userOrgFirst && asoLower.includes(userOrgFirst));
+    });
+    if (hasNonMatchingNonPublic) {
+      return { status: "leak", text: "可能存在 DNS 泄露", reason: "检测到 DNS 服务器 ISP 与网络出口 ISP 不一致" };
+    } else if (dnsLeakState.dnsServers.every(s => isPublicDns(s.aso))) {
+      return { status: "safe", text: "使用公共 DNS", reason: "DNS 请求通过公共 DNS 服务器解析，未检测到泄露" };
+    } else if (hasMatchingIsp) {
+      return { status: "safe", text: "未检测到泄露", reason: "DNS 服务器与网络出口属于同一 ISP" };
+    }
+    return { status: "uncertain", text: "无法确定", reason: "需要更多信息来判断是否存在 DNS 泄露" };
+  }
+
+  function renderDnsLeak() {
+    const list = $("dnsLeakList");
+    if (!list) return;
+    list.innerHTML = "";
+    const startBtn = $("dnsLeakStart");
+
+    if (dnsLeakState.status === "idle") {
+      if (startBtn) startBtn.classList.remove("testing");
+      const row = create("div", "ipview-row");
+      row.style.cssText = "justify-content:center;color:var(--muted);font-size:13px;padding:28px;text-align:center";
+      row.textContent = "点击「开始测试」检测 DNS 是否存在泄露";
+      list.append(row);
+      return;
+    }
+
+    if (dnsLeakState.status === "running") {
+      if (startBtn) startBtn.classList.add("testing");
+      const steps = [
+        { done: dnsLeakState.testId !== null, text: "获取测试标识…" },
+        { done: dnsLeakState.testId !== null, text: "发送 DNS 查询请求…" },
+        { done: dnsLeakState.testId !== null, text: "等待 DNS 响应记录…" },
+        { done: false, text: "获取检测结果…" }
+      ];
+      steps.forEach((step, i) => {
+        const row = create("div", "ipview-row");
+        const lab = create("div", "ipview-row-label");
+        lab.textContent = `步骤 ${i + 1}`;
+        row.append(lab);
+        const content = create("div", "ipview-content");
+        content.style.cssText = "flex:1;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)";
+        if (step.done) {
+          content.innerHTML = `<span style="color:var(--green)">✓</span> ${step.text}`;
+        } else {
+          content.innerHTML = `<span class="ipview-refresh spinning" style="position:static;opacity:1;display:inline-flex"></span> ${step.text}`;
+        }
+        row.append(content);
+        list.append(row);
+      });
+      return;
+    }
+
+    if (startBtn) startBtn.classList.remove("testing");
+
+    if (dnsLeakState.status === "error") {
+      const row = create("div", "ipview-row");
+      row.style.cssText = "flex-direction:column;align-items:flex-start;gap:10px;padding:20px";
+      const errText = create("div");
+      errText.style.cssText = "color:var(--red);font-size:13px;line-height:1.6";
+      errText.textContent = "⚠ " + dnsLeakState.error;
+      row.append(errText);
+      const link = create("a");
+      link.href = "https://dnsleaktest.com";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.style.cssText = "color:var(--green);font-size:12px;text-decoration:none;font-weight:600";
+      link.textContent = "→ 使用 dnsleaktest.com 进行检测 ↗";
+      row.append(link);
+      list.append(row);
+      return;
+    }
+
+    /* Done — 展示结果 */
+    /* 用户网络出口 IP */
+    const ipRow = create("div", "ipview-row");
+    const ipLab = create("div", "ipview-row-label");
+    ipLab.textContent = "网络出口";
+    ipRow.append(ipLab);
+    const ipContent = create("div", "ipview-content");
+    const ipSpan = create("span", `ipview-ip ${shouldBlurIp(false) ? "ipview-blur" : ""}`);
+    ipSpan.textContent = dnsLeakState.userIp || "未知";
+    ipContent.append(ipSpan);
+    const ipMeta = create("span", "ipview-meta");
+    ipMeta.textContent = `${dnsLeakState.userOrg || "未知 ISP"}`;
+    ipContent.append(ipMeta);
+    ipRow.append(ipContent);
+    list.append(ipRow);
+
+    if (dnsLeakState.dnsServers.length === 0) {
+      const noResult = create("div", "ipview-row");
+      noResult.style.cssText = "color:var(--muted);font-size:13px;padding:18px;justify-content:center";
+      noResult.textContent = "未检测到 DNS 服务器信息";
+      list.append(noResult);
+    } else {
+      dnsLeakState.dnsServers.forEach((server, i) => {
+        const row = create("div", "ipview-row");
+        const lab = create("div", "ipview-row-label");
+        lab.textContent = server.isTrace ? "CF 出口" : `DNS ${i + 1}`;
+        row.append(lab);
+        const content = create("div", "ipview-content");
+        const cc = validCountryCode(server.country_code || getCountryCodeFromChinese(server.country));
+        if (cc) { const f = flagImg(cc); if (f) content.append(f); }
+        const sIp = create("span", `ipview-ip ${shouldBlurIp(false) ? "ipview-blur" : ""}`);
+        sIp.textContent = server.ip || "未知";
+        content.append(sIp);
+        const sMeta = create("span", "ipview-meta");
+        sMeta.textContent = `${server.aso || "未知 ISP"} · ${server.country || "未知"}${server.city ? " · " + server.city : ""}`;
+        content.append(sMeta);
+        if (!server.isTrace && isPublicDns(server.aso)) {
+          const tag = create("span", "ipview-tag");
+          tag.textContent = "公共 DNS";
+          tag.style.cssText = "flex-shrink:0;padding:2px 7px;border:1px solid var(--line-strong);border-radius:5px;font-size:10px;color:var(--muted-2)";
+          content.append(tag);
+        }
+        row.append(content);
+        list.append(row);
+      });
+    }
+
+    /* 备选方案提示 */
+    if (dnsLeakState.dnsServers.length > 0 && dnsLeakState.dnsServers[0] && dnsLeakState.dnsServers[0].isTrace) {
+      const tipRow = create("div", "ipview-row");
+      tipRow.style.cssText = "flex-direction:column;align-items:flex-start;gap:6px;padding:14px 18px;background:var(--panel-soft)";
+      const tip = create("div");
+      tip.style.cssText = "color:var(--muted);font-size:11px;line-height:1.6";
+      tip.textContent = "由于跨域限制，完整 DNS 泄露检测不可用。已通过 Cloudflare 出口 IP 进行基础对比，建议使用下方链接进行完整检测。";
+      tipRow.append(tip);
+      const link = create("a");
+      link.href = "https://dnsleaktest.com";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.style.cssText = "color:var(--green);font-size:12px;text-decoration:none;font-weight:600";
+      link.textContent = "→ 使用 dnsleaktest.com 进行完整检测 ↗";
+      tipRow.append(link);
+      list.append(tipRow);
+    }
+
+    /* 结论 */
+    const verdict = analyzeDnsLeak();
+    const verdictRow = create("div", "ipview-row ipview-verdict");
+    const vLab = create("div", "verdict-label");
+    vLab.textContent = "结论";
+    verdictRow.append(vLab);
+    const vWrap = create("div");
+    vWrap.style.cssText = "flex:1;display:flex;align-items:center;gap:8px;min-width:0";
+    const vText = create("span", `verdict-text ${verdict.status}`);
+    vText.textContent = verdict.text;
+    vWrap.append(vText);
+    const vReason = create("span", "verdict-reason");
+    vReason.textContent = verdict.reason;
+    vReason.title = verdict.reason;
+    vWrap.append(vReason);
+    verdictRow.append(vWrap);
+    list.append(verdictRow);
+  }
+
+  $("dnsLeakStart").addEventListener("click", startDnsLeakTest);
+
+  /* ---------- 重新渲染（隐私开关变化时） ---------- */
+  function rerenderAll() {
+    renderIpQueryAll();
+    renderRoutingAll();
+    renderWebRTC();
+    renderDnsLeak();
+  }
+
+  /* ---------- 初始化 ---------- */
+  renderIpQueryAll();
+  renderRoutingAll();
+  renderWebRTC();
+  renderLatencyAll();
+  renderDnsLeak();
+  IP_SOURCES.forEach(s => loadIpQuery(s.key));
+  TARGET_SITES.forEach(s => loadRouting(s.id));
+  loadWebRTC();
+  setTimeout(testLatencyAll, 1500);
+})();
+</script>
+</body>
+</html>

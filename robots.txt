@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# 禁止抓取无需索引的静态资源
+Disallow: /og.jpg
+
+# 搜索引擎爬虫延迟
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://ip1234.cc/sitemap.xml
