@@ -596,31 +596,6 @@
     } finally { clearTimeout(id); }
   }
 
-  /* Cloudflare Worker 反向代理地址 — 创建 Worker 后替换为你的 URL */
-  /* 创建步骤：Dashboard → Workers & Pages → Create → Worker → 粘贴 worker-proxy.js → Deploy */
-  /* 部署后将 PROXY_BASE_URL 替换为 https://<worker-name>.<account>.workers.dev */
-  const PROXY_BASE_URL = "";
-
-  let _proxyAvailable = null;
-  async function isProxyAvailable() {
-    if (!PROXY_BASE_URL) { _proxyAvailable = false; return false; }
-    if (_proxyAvailable !== null) return _proxyAvailable;
-    try {
-      const r = await fetch(PROXY_BASE_URL + "/?url=" + encodeURIComponent("https://1.1.1.1/cdn-cgi/trace"), { signal: AbortSignal.timeout(5000) });
-      _proxyAvailable = r.ok;
-    } catch { _proxyAvailable = false; }
-    return _proxyAvailable;
-  }
-
-  /* 通过 Worker 反代获取文本（自动检测可用性） */
-  async function fetchViaProxy(targetUrl, ms = 8000) {
-    if (!PROXY_BASE_URL) throw new Error("请先配置 Worker 反代地址");
-    if (!await isProxyAvailable()) throw new Error("反代服务不可用");
-    const proxyUrl = PROXY_BASE_URL + "/?url=" + encodeURIComponent(targetUrl);
-    const res = await fetchWithTimeout(proxyUrl, {}, ms);
-    return await res.text();
-  }
-
   function getCountryCodeFromChinese(location) {
     if (!location) return "";
     const map = [["香港","HK"],["澳门","MO"],["台湾","TW"],["美国","US"],["日本","JP"],["韩国","KR"],["新加坡","SG"],["英国","GB"],["德国","DE"],["法国","FR"],["俄罗斯","RU"],["加拿大","CA"],["澳大利亚","AU"],["澳洲","AU"],["荷兰","NL"],["印度尼西亚","ID"],["印尼","ID"],["菲律宾","PH"],["马来西亚","MY"],["泰国","TH"],["越南","VN"]];
@@ -686,8 +661,6 @@
     { key: "officialV4", title: "Cloudflare", fetch: fetchOfficialIPv4 },
     { key: "ipinfo", title: "IPinfo", fetch: fetchIpinfo },
     { key: "ipsb", title: "IP.SB", fetch: fetchIpSb },
-    { key: "ip138", title: "IP138", fetch: fetchIp138 },
-    { key: "ipcn", title: "IP.CN", fetch: fetchIpcn },
   ];
   const ipQueryState = {};
 
@@ -709,25 +682,6 @@
       { label: "组织/运营商", value: geo?.asn_organization || geo?.isp || "-" },
     ];
     return { ip, location: loc || "未知", countryCode: cc, details };
-  }
-
-  async function fetchIp138() {
-    /* 通过 Cloudflare Pages Function 反代，规避 CORS */
-    const text = await fetchViaProxy("https://2026.ip138.com/");
-    const ipMatch = text.match(/ip=([0-9\.]+)&/);
-    const locMatch = text.match(/来自：(.*?)<\/span>/);
-    if (!ipMatch) throw new Error("无法解析 IP138 数据格式");
-    const loc = locMatch ? locMatch[1].trim() : "未知";
-    return { ip: ipMatch[1], location: loc, countryCode: getCountryCodeFromChinese(loc) };
-  }
-
-  async function fetchIpcn() {
-    /* 通过 Cloudflare Pages Function 反代，规避 CORS */
-    const text = await fetchViaProxy("https://my.ip.cn/");
-    const match = text.match(/ip：(.*?)\s+归属地：(.*)/);
-    if (!match) throw new Error("无法解析 IP.cn 数据格式");
-    const loc = match[2].trim();
-    return { ip: match[1].trim(), location: loc, countryCode: getCountryCodeFromChinese(loc) };
   }
 
   async function fetchIpinfo() {
@@ -1001,7 +955,7 @@
       }
     } catch {}
     /* 回退 2：从已完成的 IP 查询中提取 */
-    for (const key of ["officialV4", "ipinfo", "ipsb", "ip138", "ipcn"]) {
+    for (const key of ["officialV4", "ipinfo", "ipsb"]) {
       const s = ipQueryState[key];
       if (s && !s.loading && !s.error && s.data && s.data.ip && s.data.ip !== "未知") {
         return { ip: s.data.ip, countryCode: s.data.countryCode || "", geo: null };
@@ -1305,7 +1259,7 @@
   }
 
   function getUserIpInfo() {
-    for (const key of ["officialV4", "ipinfo", "ipsb", "ip138", "ipcn"]) {
+    for (const key of ["officialV4", "ipinfo", "ipsb"]) {
       const s = ipQueryState[key];
       if (s && !s.loading && !s.error && s.data && s.data.ip && s.data.ip !== "未知") {
         let org = "";
