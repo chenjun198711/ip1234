@@ -595,6 +595,25 @@
     } finally { clearTimeout(id); }
   }
 
+  /* 检测 /api/proxy 是否可用（CF Pages Function） */
+  let _proxyAvailable = null;
+  async function isProxyAvailable() {
+    if (_proxyAvailable !== null) return _proxyAvailable;
+    try {
+      const r = await fetch("/api/proxy?url=" + encodeURIComponent("https://1.1.1.1/cdn-cgi/trace"), { signal: AbortSignal.timeout(5000) });
+      _proxyAvailable = r.ok;
+    } catch { _proxyAvailable = false; }
+    return _proxyAvailable;
+  }
+
+  /* 通过 /api/proxy 反代获取文本（自动检测可用性） */
+  async function fetchViaProxy(targetUrl, ms = 8000) {
+    if (!await isProxyAvailable()) throw new Error("反代服务不可用");
+    const proxyUrl = "/api/proxy?url=" + encodeURIComponent(targetUrl);
+    const res = await fetchWithTimeout(proxyUrl, {}, ms);
+    return await res.text();
+  }
+
   function getCountryCodeFromChinese(location) {
     if (!location) return "";
     const map = [["香港","HK"],["澳门","MO"],["台湾","TW"],["美国","US"],["日本","JP"],["韩国","KR"],["新加坡","SG"],["英国","GB"],["德国","DE"],["法国","FR"],["俄罗斯","RU"],["加拿大","CA"],["澳大利亚","AU"],["澳洲","AU"],["荷兰","NL"],["印度尼西亚","ID"],["印尼","ID"],["菲律宾","PH"],["马来西亚","MY"],["泰国","TH"],["越南","VN"]];
@@ -687,9 +706,7 @@
 
   async function fetchIp138() {
     /* 通过 Cloudflare Pages Function 反代，规避 CORS */
-    const proxyUrl = "/api/proxy?url=" + encodeURIComponent("https://2026.ip138.com/");
-    const res = await fetchWithTimeout(proxyUrl);
-    const text = await res.text();
+    const text = await fetchViaProxy("https://2026.ip138.com/");
     const ipMatch = text.match(/ip=([0-9\.]+)&/);
     const locMatch = text.match(/来自：(.*?)<\/span>/);
     if (!ipMatch) throw new Error("无法解析 IP138 数据格式");
@@ -699,9 +716,7 @@
 
   async function fetchIpcn() {
     /* 通过 Cloudflare Pages Function 反代，规避 CORS */
-    const proxyUrl = "/api/proxy?url=" + encodeURIComponent("https://my.ip.cn/");
-    const res = await fetchWithTimeout(proxyUrl);
-    const text = await res.text();
+    const text = await fetchViaProxy("https://my.ip.cn/");
     const match = text.match(/ip：(.*?)\s+归属地：(.*)/);
     if (!match) throw new Error("无法解析 IP.cn 数据格式");
     const loc = match[2].trim();
@@ -806,10 +821,7 @@
   async function fetchTrace(url) {
     try {
       /* 通过 Cloudflare Pages Function 反代，规避 CORS */
-      const proxyUrl = "/api/proxy?url=" + encodeURIComponent(url);
-      const res = await fetchWithTimeout(proxyUrl);
-      if (!res.ok) throw new Error("请求失败");
-      const text = await res.text();
+      const text = await fetchViaProxy(url);
       const ipMatch = text.match(/ip=(.+)/);
       if (!ipMatch) throw new Error("无法解析 IP");
       return { ip: ipMatch[1].trim() };
