@@ -1,5 +1,5 @@
 name = "ip1234"
-main = "_worker.js"
+main = "src/index.js"
 compatibility_date = "2024-09-23"
 
 [assets]
