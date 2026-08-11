@@ -170,6 +170,7 @@
             <div class="ipview-list" id="ipQueryList"></div>
           </div>
           <div class="ipview-panel" id="panel-routing" role="tabpanel" hidden>
+            <p class="ipview-desc">通过 DNS over HTTPS 查询目标网站的解析 IP 与归属地，检测不同网站的 DNS 分流情况。</p>
             <div class="ipview-list" id="routingList"></div>
           </div>
           <div class="ipview-panel" id="panel-webrtc" role="tabpanel" hidden>
@@ -808,26 +809,32 @@
 
   /* ========== 网站分流 ========== */
   const TARGET_SITES = [
-    { id: "x", name: "X", url: "https://x.com/cdn-cgi/trace" },
-    { id: "chatgpt", name: "ChatGPT", url: "https://chatgpt.com/cdn-cgi/trace" },
-    { id: "openai", name: "OpenAI", url: "https://openai.com/cdn-cgi/trace" },
-    { id: "claude", name: "Claude", url: "https://claude.ai/cdn-cgi/trace" },
-    { id: "anthropic", name: "Anthropic", url: "https://anthropic.com/cdn-cgi/trace" },
-    { id: "grok", name: "Grok", url: "https://grok.com/cdn-cgi/trace" },
+    { id: "x", name: "X", domain: "x.com" },
+    { id: "chatgpt", name: "ChatGPT", domain: "chatgpt.com" },
+    { id: "openai", name: "OpenAI", domain: "openai.com" },
+    { id: "claude", name: "Claude", domain: "claude.ai" },
+    { id: "anthropic", name: "Anthropic", domain: "anthropic.com" },
+    { id: "grok", name: "Grok", domain: "grok.com" },
   ];
   const routingState = {};
   const ipCache = {};
 
-  async function fetchTrace(url) {
-    try {
-      /* 通过 Cloudflare Pages Function 反代，规避 CORS */
-      const text = await fetchViaProxy(url);
-      const ipMatch = text.match(/ip=(.+)/);
-      if (!ipMatch) throw new Error("无法解析 IP");
-      return { ip: ipMatch[1].trim() };
-    } catch (err) {
-      throw new Error(err.message === "Failed to fetch" ? "网络错误或遭跨域拦截" : err.message);
+  /* DoH 查询 DNS A 记录（Cloudflare DoH 支持 CORS） */
+  async function fetchDnsA(domain) {
+    const res = await fetchWithTimeout(
+      `https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(domain)}&type=A`,
+      { headers: { "Accept": "application/dns-json" } }
+    );
+    const data = await res.json();
+    /* 优先取 A 记录，其次取 CNAME */
+    const aRecords = (data.Answer || []).filter(a => a.type === 1);
+    if (aRecords.length > 0) return aRecords[0].data;
+    const cnameRecords = (data.Answer || []).filter(a => a.type === 5);
+    if (cnameRecords.length > 0) {
+      /* CNAME 递归查询 */
+      return await fetchDnsA(cnameRecords[0].data);
     }
+    throw new Error("未找到 DNS A 记录");
   }
 
   async function fetchGeoByIp(ip) {
@@ -842,13 +849,14 @@
     routingState[siteId] = { loading: true, data: null, error: null };
     renderRoutingRow(siteId);
     try {
-      const { ip } = await fetchTrace(site.url);
+      /* 通过 DoH 查询 DNS A 记录，检测 DNS 分流 */
+      const ip = await fetchDnsA(site.domain);
       let geo;
       if (ipCache[ip]) { geo = ipCache[ip]; }
       else { geo = await fetchGeoByIp(ip); ipCache[ip] = geo; }
       routingState[siteId] = { loading: false, data: { ip, geo }, error: null };
     } catch (err) {
-      routingState[siteId] = { loading: false, data: null, error: err.message };
+      routingState[siteId] = { loading: false, data: null, error: err.message === "Failed to fetch" ? "DNS 查询失败" : err.message };
     }
     renderRoutingRow(siteId);
   }
