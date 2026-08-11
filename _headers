@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.openstreetmap.org; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://ipapi.co https://api.ip.sb https://ipinfo.io https://www.cloudflare.com https://1.1.1.1 https://cloudflare-dns.com https://www.baidu.com https://www.google.com https://github.com https://res.wx.qq.com https://i0.hdslb.com; frame-src https://www.openstreetmap.org; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.openstreetmap.org; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://ipapi.co https://api.ip.sb https://ipinfo.io https://www.cloudflare.com https://1.1.1.1 https://cloudflare-dns.com https://*.workers.dev https://www.baidu.com https://www.google.com https://github.com https://res.wx.qq.com https://i0.hdslb.com; frame-src https://www.openstreetmap.org; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin

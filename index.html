@@ -596,21 +596,27 @@
     } finally { clearTimeout(id); }
   }
 
-  /* 检测 /api/proxy 是否可用（CF Pages Function） */
+  /* Cloudflare Worker 反向代理地址 — 创建 Worker 后替换为你的 URL */
+  /* 创建步骤：Dashboard → Workers & Pages → Create → Worker → 粘贴 worker-proxy.js → Deploy */
+  /* 部署后将 PROXY_BASE_URL 替换为 https://<worker-name>.<account>.workers.dev */
+  const PROXY_BASE_URL = "";
+
   let _proxyAvailable = null;
   async function isProxyAvailable() {
+    if (!PROXY_BASE_URL) { _proxyAvailable = false; return false; }
     if (_proxyAvailable !== null) return _proxyAvailable;
     try {
-      const r = await fetch("/api/proxy?url=" + encodeURIComponent("https://1.1.1.1/cdn-cgi/trace"), { signal: AbortSignal.timeout(5000) });
+      const r = await fetch(PROXY_BASE_URL + "/?url=" + encodeURIComponent("https://1.1.1.1/cdn-cgi/trace"), { signal: AbortSignal.timeout(5000) });
       _proxyAvailable = r.ok;
     } catch { _proxyAvailable = false; }
     return _proxyAvailable;
   }
 
-  /* 通过 /api/proxy 反代获取文本（自动检测可用性） */
+  /* 通过 Worker 反代获取文本（自动检测可用性） */
   async function fetchViaProxy(targetUrl, ms = 8000) {
+    if (!PROXY_BASE_URL) throw new Error("请先配置 Worker 反代地址");
     if (!await isProxyAvailable()) throw new Error("反代服务不可用");
-    const proxyUrl = "/api/proxy?url=" + encodeURIComponent(targetUrl);
+    const proxyUrl = PROXY_BASE_URL + "/?url=" + encodeURIComponent(targetUrl);
     const res = await fetchWithTimeout(proxyUrl, {}, ms);
     return await res.text();
   }
