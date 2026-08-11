@@ -666,21 +666,29 @@
   const ipQueryState = {};
 
   async function fetchOfficialIPv4() {
-    const res = await fetchWithTimeout("https://ip-api-v4.aneysha.net/");
-    const data = await res.json();
-    const ipData = data.IP || {};
+    /* 使用 Cloudflare trace 端点（原生支持 CORS，稳定可靠） */
+    const res = await fetchWithTimeout("https://1.1.1.1/cdn-cgi/trace");
+    const text = await res.text();
+    const ipMatch = text.match(/ip=(.+)/);
+    if (!ipMatch) throw new Error("无法解析 Cloudflare trace 数据");
+    const ip = ipMatch[1].trim();
+    let geo = null;
+    try { geo = await fetchGeoByIp(ip); } catch {}
+    const cc = geo?.country_code || "";
+    const loc = [cc, geo?.country || "", geo?.city || "", geo?.asn_organization || geo?.isp || ""].filter(Boolean).join(" ");
     const details = [
-      { label: "国家/地区", value: ipData.Country || "-" },
-      { label: "省份/州", value: ipData.Region || "-" },
-      { label: "城市", value: ipData.City || "-" },
-      { label: "ASN", value: ipData.ASN || "-" },
-      { label: "组织/运营商", value: ipData.ASOrganization || "-" },
+      { label: "国家/地区", value: geo?.country || cc || "-" },
+      { label: "城市", value: geo?.city || "-" },
+      { label: "ASN", value: geo?.asn ? "AS" + geo.asn : "-" },
+      { label: "组织/运营商", value: geo?.asn_organization || geo?.isp || "-" },
     ];
-    return { ip: ipData.IP || "未知", countryCode: ipData.Country || "", details };
+    return { ip, location: loc || "未知", countryCode: cc, details };
   }
 
   async function fetchIp138() {
-    const res = await fetchWithTimeout("https://2026.ip138.com/");
+    /* 通过 Cloudflare Pages Function 反代，规避 CORS */
+    const proxyUrl = "/api/proxy?url=" + encodeURIComponent("https://2026.ip138.com/");
+    const res = await fetchWithTimeout(proxyUrl);
     const text = await res.text();
     const ipMatch = text.match(/ip=([0-9\.]+)&/);
     const locMatch = text.match(/来自：(.*?)<\/span>/);
@@ -690,7 +698,9 @@
   }
 
   async function fetchIpcn() {
-    const res = await fetchWithTimeout("https://my.ip.cn/");
+    /* 通过 Cloudflare Pages Function 反代，规避 CORS */
+    const proxyUrl = "/api/proxy?url=" + encodeURIComponent("https://my.ip.cn/");
+    const res = await fetchWithTimeout(proxyUrl);
     const text = await res.text();
     const match = text.match(/ip：(.*?)\s+归属地：(.*)/);
     if (!match) throw new Error("无法解析 IP.cn 数据格式");
@@ -795,7 +805,9 @@
 
   async function fetchTrace(url) {
     try {
-      const res = await fetch(url);
+      /* 通过 Cloudflare Pages Function 反代，规避 CORS */
+      const proxyUrl = "/api/proxy?url=" + encodeURIComponent(url);
+      const res = await fetchWithTimeout(proxyUrl);
       if (!res.ok) throw new Error("请求失败");
       const text = await res.text();
       const ipMatch = text.match(/ip=(.+)/);
@@ -1287,10 +1299,10 @@
   }
 
   async function fetchJsonWithFallback(url, timeout = 10000) {
+    /* 优先直连，失败后通过 Cloudflare Pages Function 反代 */
     const urls = [
       url,
-      `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
-      `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+      `/api/proxy?url=${encodeURIComponent(url)}`,
     ];
     for (const u of urls) {
       try {
@@ -1302,9 +1314,10 @@
   }
 
   async function fetchTextWithFallback(url, timeout = 10000) {
+    /* 优先直连，失败后通过 Cloudflare Pages Function 反代 */
     const urls = [
       url,
-      `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+      `/api/proxy?url=${encodeURIComponent(url)}`,
     ];
     for (const u of urls) {
       try {
@@ -1337,9 +1350,9 @@
       cfTraceLoc = (traceText.match(/^loc=(.+)$/m) || [])[1] || "";
       cfTraceColo = (traceText.match(/^colo=(.+)$/m) || [])[1] || "";
     } catch (e) {
-      /* 直接请求失败，尝试 CORS 代理 */
+      /* 直接请求失败，通过 Pages Function 反代重试 */
       try {
-        const proxyUrl = `https://corsproxy.io/?url=${encodeURIComponent("https://1.1.1.1/cdn-cgi/trace")}`;
+        const proxyUrl = `/api/proxy?url=${encodeURIComponent("https://1.1.1.1/cdn-cgi/trace")}`;
         const traceRes = await fetchWithTimeout(proxyUrl, {}, 8000);
         const traceText = await traceRes.text();
         cfTraceIp = (traceText.match(/^ip=(.+)$/m) || [])[1] || "";
